@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<log4j:configuration>
+
+<import file="./log4jImports.xml" />
+
+		<appender name="Administrator" class="org.apache.log4j.FileAppender">
+				
+				<param name="File" value="E:\VIMS-WorkFolder\Engineering\Source_Code\I_VIMSD\jboss\server\default\log\Admin.html"/>
+
+				<layout class="com.vertex.VIMS.test.log4j.VIMSLogsHtmlLayout">
+				
+				</layout>
+
+		</appender>
+
+		<appender name="Customer" class="org.apache.log4j.FileAppender">
+				
+				<param name="File" value="E:\VIMS-WorkFolder\Engineering\Source_Code\I_VIMSD\jboss\server\default\log\Customer.html"/>
+
+				<layout class="com.vertex.VIMS.test.log4j.VIMSLogsHtmlLayout">
+				
+				</layout>
+
+		</appender>
+
+		<appender name="Employee" class="org.apache.log4j.FileAppender">
+			
+			<param name="File" value="${jboss.server.log.dir}/Employee.html"/>		
+			
+			<layout class="com.vertex.VIMS.test.log4j.VIMSLogsHtmlLayout">
+			
+			</layout>	
+		
+		</appender>
+		
+		<appender name="Default" class="org.apache.log4j.ConsoleAppender">
+			
+			<param name="console" value="System.out"/>		
+			
+			<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n"/>
+			</layout>	
+		
+		</appender>
+
+		<logger name="Admin">
+		
+			<level value="debug" />	        
+		
+			<appender-ref ref="Administrator" />	
+		
+		</logger>
+
+		<logger name="Customer">
+		
+			<level value="debug" />	        
+		
+			<appender-ref ref="Customer" />	
+		
+		</logger>
+		
+		<logger name="Employee">
+		
+			<level value="debug" />	        
+		
+			<appender-ref ref="Employee" />	
+		
+		</logger>
+		
+		<root>
+
+				<priority value="info"></priority>
+		
+				<appender-ref ref="Default"/>
+		</root>
+
+
+</log4j:configuration>

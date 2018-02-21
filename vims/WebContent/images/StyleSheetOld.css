@@ -1,0 +1,176 @@
+BODY  {
+	BACKGROUND-COLOR : white;	
+}
+
+BODY  {
+	FONT-WEIGHT : normal;
+	FONT-SIZE : 9pt;
+	COLOR : #000000;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+	TEXT-ALIGN : left;
+}
+.leftbar  {
+	BACKGROUND-COLOR : white;
+}
+
+.rightbar  {
+	BACKGROUND : #ffffff;
+	WIDTH : 250px;
+}
+
+.copyrights  {
+	FONT-SIZE : 0.8em;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+	TEXT-ALIGN : center;
+}
+
+.heading  {
+	FONT-WEIGHT : bold;
+	FONT-SIZE : 12pt;
+	COLOR : lightyellow;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+}
+
+.headingsubtext  {
+	FONT-WEIGHT : bold;
+	FONT-SIZE : 15pt;
+	COLOR : #000390;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+	TEXT-ALIGN : center;
+}
+
+.fieldlabel  {
+	FONT-WEIGHT : 500;
+	FONT-SIZE : 10pt;
+	COLOR : #000000;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+	TEXT-ALIGN : left;
+}
+
+.notetxt  {
+	FONT-SIZE : 9pt;
+	COLOR : #000000;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+	TEXT-ALIGN : left;
+}
+
+INPUT  {
+	FONT-SIZE : 9pt;
+	COLOR : #000000;
+	FONT-FAMILY : Arial,Palatino,Helvetica,sans-serif;
+}
+
+SELECT  {
+	FONT-SIZE : 9pt;
+	COLOR : #000000;
+	FONT-FAMILY : Arial,Palatino,Helvetica,sans-serif;
+}
+
+OPTION  {
+	FONT-SIZE : 9pt;
+	COLOR : #000000;
+	FONT-FAMILY : Arial,Palatino,Helvetica,sans-serif;
+}
+
+.formelementtxt  {
+	FONT-SIZE : 9pt;
+	COLOR : #000000;
+	FONT-FAMILY : Arial,Palatino,Helvetica,sans-serif;
+}
+
+.infolink  {
+	FONT-SIZE : 10pt;
+	COLOR : #003399;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+}
+
+.infolink:link  {
+	FONT-SIZE : 10pt;
+	COLOR : #003399;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+	TEXT-DECORATION : none;
+}
+
+.infolink:visited  {
+	FONT-SIZE : 10pt;
+	COLOR : #003399;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+	TEXT-DECORATION : none;
+}
+
+.infolink:hover  {
+	FONT-SIZE : 10pt;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+	TEXT-DECORATION : underline;
+}
+
+.infobottom:link  {
+	FONT-SIZE : 10pt;
+	COLOR : #0000ff;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+	TEXT-DECORATION : none;
+}
+
+.infobottom:visited  {
+	FONT-SIZE : 10pt;
+	COLOR : #0000ff;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+	TEXT-DECORATION : none;
+}
+
+.infobottom:hover  {
+	FONT-SIZE : 10pt;
+	COLOR : #ff0000;
+	FONT-FAMILY : Arial,Verdana,Helvetica,sans-serif;
+	TEXT-DECORATION : underline;
+}
+
+.normal  {
+	FONT-WEIGHT : normal;
+	FONT-SIZE : 10pt;
+	COLOR : #333399;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+}
+
+.normaltext  {
+	FONT-WEIGHT : bold;
+	FONT-SIZE : 9pt;
+	COLOR : black;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+	TEXT-DECORATION : none;
+}
+
+.contenttext  {
+	FONT-WEIGHT : 800;
+	FONT-SIZE : 10pt;
+	COLOR : black;
+	FONT-FAMILY : Verdana,Arial,Palatino,Helvetica,sans-serif;
+	TEXT-DECORATION : none;
+}
+
+.normalcontenttext  {
+	FONT-WEIGHT : normal;
+	FONT-SIZE : 10pt;
+	COLOR : #000099;
+	FONT-FAMILY : Arial,Verdana,Palatino,Helvetica,sans-serif;
+	TEXT-DECORATION : none;
+}
+
+.fieldhead  {
+	FONT-WEIGHT : bold;
+	FONT-SIZE : 10pt;
+	COLOR : #330099;
+	FONT-FAMILY : Verdana,Arial,Palatino,Helvetica,sans-serif;
+}
+
+.contentsubhead  {
+	FONT-WEIGHT : bold;
+	FONT-SIZE : 12pt;
+	COLOR : black;
+	FONT-FAMILY : Verdana,Arial,Palatino,Helvetica,sans-serif;
+	TEXT-ALIGN : left;
+	TEXT-DECORATION : none;
+}
+
+.headingbackground  {}
+

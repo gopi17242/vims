@@ -1,0 +1,906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+                               "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+
+<!-- Adding Global Exception element -->
+	
+	
+	<form-beans>
+	
+	<!-- Added by Rajashekar -->
+	
+	<form-bean name="IssueReportForm" type="com.vertex.VIMS.test.reportsTest.form.IssueReportForm" />
+	<form-bean name="TabForm" type="com.vertex.VIMS.test.ldap.form.VIMSTabForm" />
+	<form-bean name="FooterForm" type="com.vertex.VIMS.test.ldap.form.VIMSFooterForm" />
+	<!-- End  -->
+	
+	<form-bean name="NewEmployeeFormBean" type="com.vertex.VIMS.test.employee.form.NewEmployeeFormBean"/>
+	<form-bean name="EmployeeFormName" type="com.vertex.VIMS.test.employee.form.EmployeeForm"/>
+	<form-bean name="ListofIssuesForm" type="com.vertex.VIMS.test.listofissues.form.ListofIssuesForm"/>
+	<form-bean name="VIMSPurgingForm" type="com.vertex.VIMS.test.purging.form.PurgingFormBean"></form-bean>
+		<form-bean name="LoginForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="userId" type="java.lang.String"/>
+			<form-property name="password" type="java.lang.String"/>			
+		</form-bean> 
+	<!-- Support Center Form Bean -->
+	<form-bean name="SupportCenterForm" type="com.vertex.VIMS.test.supportcenter.form.SupportCenterForm"/>
+	<form-bean name="SupportCenterNewActionForm" type="com.vertex.VIMS.test.supportcenter.form.SupportCenterNewActionForm"/>
+	
+	<!-- Mail & Ldap Config Form bean --> 
+    
+    <form-bean name="configForm" type="com.vertex.VIMS.test.ldap.form.ConfigForm" />
+    
+    <!-- End of Mail & Ldap Config Form bean -->
+
+		<form-bean name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.form.VIMSApplicationForm">
+					
+		</form-bean>
+		 <!-- VIMSHomeForm  created by santhosh.k -->
+		<form-bean name="changePasswordForm" type="com.vertex.VIMS.test.changePassword.form.changePasswordForm"></form-bean>
+		
+		<form-bean name="VIMSHomeForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="applicationId" type="java.lang.String"/>
+			<form-property name="issueId" type="java.lang.String"/>			
+		</form-bean> 
+		 <!-- End of VIMSHomeForm  Form bean -->
+
+		 <!-- Open IssuesReports for open issues in an Application created by santhosh.k -->
+		<form-bean name="OpenIssuesReports" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="export" type="java.lang.String"/>	
+			<form-property name="application" type="java.lang.String"/>	
+		</form-bean>
+		 <!-- End of OpenIssuesReports -->
+
+		<!-- ReportsForm for Reports created by santhosh.k -->
+		<form-bean name="ReportsForm" type="com.vertex.VIMS.test.reports.form.ReportsActionForm"/>
+		<form-bean name="ApplicationReportsForm" type="com.vertex.VIMS.test.reportsTest.form.ApplicationReportsForm"/>
+		 <!-- End of ReportsForm-->
+
+		 <!-- ReportsGenerateForm created by santhosh.k -->
+		<form-bean name="ReportsGenerateForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="export" type="java.lang.String"/>				
+			<form-property name="imgPath" type="java.lang.String"/>	
+			<form-property name="application" type="java.lang.String"/>	
+			<form-property name="issue" type="java.lang.String"/>
+			<form-property name="incidentType" type="java.lang.String"/>
+			<form-property name="applicationId" type="java.lang.String"/>
+			<form-property name="status" type="java.lang.String"/>	
+			<form-property name="chartType" type="java.lang.String"/>	
+						
+		</form-bean>
+		 <!-- End of ReportsGenerateForm-->
+			<!-- added by santhosh.k on 01/13/2009 -->
+			<form-bean name="CustomReportsForm" type="com.vertex.VIMS.test.reports.form.CustomReportsActionForm">
+			</form-bean>
+			<!-- <form-bean name="ReportsForm" type="org.apache.struts.validator.DynaValidatorForm">
+			<form-property name="chartType" type="java.lang.String"/>
+			<form-property name="ApplicationSelected" type="java.lang.String"/>									
+			<form-property name="issueTypeSelected" type="java.lang.String"/>
+						
+		</form-bean>  -->
+
+		
+		<form-bean name="NewIssueForm" type="com.vertex.VIMS.test.newissue.form.NewIssueForm"/>
+		  
+		<form-bean name="ListofIssuesForm" type="com.vertex.VIMS.test.listofissues.form.ListofIssuesForm"/>
+		
+		<form-bean name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.form.VIMSCustomerForm"></form-bean> 
+        
+        <form-bean name="VIMSSLAForm" type="com.vertex.VIMS.test.SLA.form.SLAActionForm">
+					
+		</form-bean> 
+		
+		<form-bean name="VIMSSearchForm" type="com.vertex.VIMS.test.search.form.VIMSSearchForm"></form-bean> 
+         <form-bean name="MyToDoListFormBean" type="com.vertex.VIMS.test.search.form.VIMSSearchForm"></form-bean>
+        
+        
+	 </form-beans>
+	 
+	<global-exceptions>
+			<exception	key="error.Exception"
+						type="java.lang.Exception"
+						path="/test-errorPages/VIMSerrorpage.jsp"/>
+	</global-exceptions>
+	
+<!-- =========================================== Global Forwards -->	
+	<global-forwards>
+	<forward name="privilegeHome" path="TabHomeTile" />
+	<forward name="roleHome" path="/RoleAction.do?param=roleHome" />
+	<forward name="displayDetailView" path="displayDetailViewTile" />
+	<forward name="displayReport" path="IssueReportListTile" />
+	<!--  ==============Admin Configuration Settings=========== -->
+	<forward name="NoAuthorizationPage" path="/test-errorPages/noAuthorization.jsp" />
+	<forward name="viewNewApplicationList" path="Applications" />
+	<forward name="ldap" path="/ldapServerAction.do?param=ldapServerAction" />
+	<forward name="mail" path="/mailServerAction.do?param=mailServerAction" /> 
+	<forward name="homeBase" path="homeTile" />
+	
+	  <forward name="positionHome" path="/PositionAction.do?param=getPositionList" /> 
+      <forward name="fieldHome" path="/customizeFields.do?param=getFieldConfigurationSettings" />
+	  <forward name="errorPage" path="/test-errorPages/VIMSerrorpage.jsp" />
+	  <forward name="sessionExpirePage" path="/test-errorPages/VIMSSessionErrorpage.jsp" />
+ 	  <forward name="SLASettings" path="SLA"/> <!-- added by santhosh.k-->
+	  <forward name="AssignmentPage" path="IssueAssignment"/>
+	  <forward name="home" path="VIMSBase"/><!-- added by santhosh.k-->
+	  <forward name="homePageOpenIssuesDisplay" path="DisplayOpenIssuesInAppl"/><!-- added by santhosh.k-->
+	  <forward name="Issuespage" path="ListofIssues"/>
+	  <forward name="reportChoice" path="ManagementReports"/>
+	  <forward name="display" path="ReportsDisplay"/>
+	  <forward name="specificStatusIssues" path="Specificstatbar"/><!-- added by santhosh.k-->
+	  <forward name="allIssuesReports" path="AllIssuesReports"/><!-- added by santhosh.k-->
+	  <forward name="displaySLAInformation" path="SLAStatusBar"/><!-- added by santhosh.k-->
+      <forward name="WorkLocationHome" path="WorkLocationHome" /><!-- added by Aditya.P-->
+	  <forward name="StatePage" path="StatePage" /><!-- added by Aditya.P-->
+	  
+      <forward name="IssuesUserPage" path="ListOfIssuesUser"/>
+	  <forward name="clientView" path="viewClient"/>
+
+	  <forward name="customHome" path="CustomReports"/>
+         
+      <forward name="IssuesUserPage" path="ListOfIssuesUser"/>
+	  <forward name="clientView" path="viewClient"/>
+
+	  <forward name="homeClients" path="Clients"/>	  
+	  <forward name="page" path="TestCustomer"/>
+	  <forward name="clientDisplay" path="DisplayClient"/>
+	  <forward name="displayClient" path="./dispatchClient.do?client=Base"/>
+	  
+	  <forward name="Issuespage" path="ListofIssues"/>
+   	  <forward name="success" path="NewSupportCenterSuccess"/>
+   	 <forward name="failure" path="NewSupportCenterFailure"/>
+   	 <forward name="AssignmentPage" path="IssueAssignment"/>
+   	 <forward name="IssueAssignSuccessPage" path="IssueAssignmentSuccess"/>
+   	 <forward name="IssueAssignFailurePage" path="IssueAssignmentFailure"/>
+    	
+      <forward name="BasePage" path="SupportCenter"/>
+    	<forward name="success" path="NewSupportCenterSuccess"/>
+    	<forward name="failure" path="NewSupportCenterFailure"/>
+    	<forward name="groupsuccess" path="NewGroupSuccess"/>
+    	<forward name="groupfailure" path="NewGroupFailure"/>
+    	<forward name="GroupsPage" path="Groups"/>
+    	<forward name="EditGroup" path="EditGroup"/>
+    	<forward name="newSupportCenterPage" path="NewSupportCenter"/>
+    	<forward name="EditSupportCenterPage" path="EditSupportCenterPage"/>
+    	<forward name="modifyingEmployeeSuccess" path="Employees"/>
+    	<forward name="MyToDoListForward" path="MyToDoList"/>	
+    	<forward name="deletionSuccess" path="/employeenew.do" />
+    	<forward name="testEmployee" path="Employees"/>
+ 	   	<forward name="vimsCustomerAction" path="/dispatchClient.do?client=Base"/>
+	    <forward name="vimsEmployeeAction" path="/employeeLookupDispatch.do?function=EmployeeFirstPage"/>
+ 	    <forward name="ViewGroups" path="ViewGroups"/>
+ 	    <forward name="modifyEmployee" path="EditEmployee"/>
+ 	    
+ 	     <!-- Configuration Settings Home Page Added by santhosh.k on 02/11/2009 -->
+ 	     <forward name="configurationHome" path="configHome"/>
+ 	     
+ 	     <forward name="displayApplicationReports" path="DisplayApplicationReports"/>
+ 		<forward name="displaySLAReports" path="DisplaySLAReports"/>
+	</global-forwards>
+<!-- =========================================== Action Mapping Definitions -->
+
+	
+    <action-mappings>
+    <!-- ^^^^^^^^^^  VIMSMailLoginAction^^^^^^^^^^^^^^^^^^^^^^^ -->
+    
+       <action path="/VIMSMailLogin" type="com.vertex.VIMS.test.login.action.VIMSMailLoginAction">
+        <forward name="VIMSMailLogin" path="/LoginTest/Login.jsp" />
+       </action> 
+    <!--  ^^^^^^^^^^ End of  VIMSMailLoginAction^^^^^^^^^^^^^^^^^^^^^^^ -->
+   
+   <!-- ===========================================Switching between Struts-configs======================= -->
+   
+    <action path="/switch" scope="request" type="org.apache.struts.actions.SwitchAction"/>
+   
+   <!-- ================================================================================================ -->
+   
+	<action path="/LoginAction" type="com.vertex.VIMS.test.login.action.LoginAction" name="LoginForm" input="/LoginTest/Login.jsp" scope="request" attribute="login" validate="true">
+	<forward name="home" path="VIMSBase"/>
+	<forward name="home1" path="VIMSHome1"/>
+	<forward name="login" path="/LoginTest/Login.jsp"/>
+	<forward name="loginerror" path="LoginError"/>
+	<forward name="errorpage" path="LoginError"/>
+	<!-- <forward name="user" path="VIMSUserBase" />	 -->
+	</action>
+	
+	<!-- =================================================================================== -->
+<!-- ===========================VIMS Administrator Modules========================= -->	
+<!-- ====================================================================================-->
+	
+	
+	 <action path="/testAct" type="com.vertex.VIMS.test.newissue.action.testAction"  scope="request">
+		</action>
+	
+	
+	
+	<!-- ===================VIMS Home Page==================== -->	
+		<action path="/vimsBase" forward="VIMSBase"/>
+		<action path="/home" type="com.vertex.VIMS.test.home.action.VIMSHomeLookUpDispatchAction"  input="VIMSBase" validate="false" parameter="method" name="VIMSHomeForm" />
+		<action path="/homeSLA" type="com.vertex.VIMS.test.home.action.VIMSHomeLookUpDispatchAction"  input="VIMSBase" validate="false" parameter="getSLA" name="VIMSHomeForm">
+		<forward name="home" path="VIMSBase"/>		
+		</action>
+		<action path="/homeIssueDetails" type="com.vertex.VIMS.test.home.action.VIMSHomeLookUpDispatchAction"  input="VIMSBase" validate="true" parameter="getSLA" name="VIMSHomeForm" scope="request">
+		<forward name="homePageOpenIssuesDisplay" path="DisplayOpenIssuesInAppl"></forward>
+		</action>
+		<action path="/openIssuesExport" type="com.vertex.VIMS.test.home.action.VIMSHomeLookUpDispatchAction"  input="VIMSBase" validate="false" parameter="exportType" name="OpenIssuesReports" scope="request" >
+		</action>
+
+		<!-- =================== VIMS Administration==================== -->	
+		<action path="/administration" forward="Admininistration"/>
+
+		<action path="/administrationChangePassword" forward="AdministrationChangePassword"/>
+		
+			
+			
+ <!-- =====================SupportCenter============================= -->
+
+          <action path="/supportCenter"
+    			name="SupportCenterForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="false">
+    			
+    	<forward name="BasePage" path="SupportCenter"/>
+    	<forward name="success" path="NewSupportCenterSuccess"/>
+    	<forward name="failure" path="NewSupportCenterFailure"/>
+    	<forward name="groupsuccess" path="NewGroupSuccess"/>
+    	<forward name="groupfailure" path="NewGroupFailure"/>
+    	<forward name="GroupsPage" path="Groups"/>
+    	<forward name="EditGroup" path="EditGroup"/>
+    	<forward name="newSupportCenterPage" path="NewSupportCenter"/>
+    	<forward name="EditSupportCenterPage" path="EditSupportCenterPage"/>
+    	<forward name="ViewGroups" path="ViewGroups"/>
+    			</action>
+    	
+    	<action path="/checkSupportCenterAvailability"
+    	        name="SupportCenterNewActionForm"
+    	        type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    	        parameter="methodname"
+    			scope="request"
+    			validate="false"
+    			input="NewSupportCenter">
+    	<forward name="newSupportCenterPage" path="NewSupportCenter"/>
+    	</action>
+    	
+    	<action path="/EditGroup"
+    			name="SupportCenterForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="false"
+    			input="EditGroup">
+    	<forward name="EditGroup" path="EditGroup"/>
+    	</action>
+    	
+    	<action path="/ModifyGroup"
+    			name="SupportCenterForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="true"
+    			input="EditGroup">
+    	<forward name="EditGroup" path="EditGroup"/>
+    	<forward name="ViewGroups" path="ViewGroups"/>
+    	</action>
+    	
+    	<action path="/checkGroupAvailability"
+    			name="SupportCenterForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="false"
+    			input="Groups">
+    	<forward name="GroupsPage" path="Groups"/>
+    	</action>
+    		
+		 <action path="/NewSupportCenterGroup"
+    			name="SupportCenterForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="true"
+    			input="Groups">
+    	<forward name="GroupsPage" path="Groups"/>
+    	<forward name="groupsuccess" path="NewGroupSuccess"/>
+    	<forward name="groupfailure" path="NewGroupFailure"/>
+    	</action>
+    	
+    	<action path="/NewSupportCenter"
+    			name="SupportCenterNewActionForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="true"
+    			input="NewSupportCenter">	
+    	<forward name="success" path="NewSupportCenterSuccess"/>
+    	<forward name="failure" path="NewSupportCenterFailure"/>
+    	</action>
+    	
+    	 <action path="/EditSupportCenter"
+    			name="SupportCenterNewActionForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="false"
+    			input="EditSupportCenterPage">
+    	<forward name="EditSupportCenterPage" path="EditSupportCenterPage"/>
+    	<forward name="BasePage" path="SupportCenter"/>
+    	</action>
+    	
+    	<action path="/ModifySupportCenter"
+    			name="SupportCenterNewActionForm"
+    			type="com.vertex.VIMS.test.supportcenter.action.SupportCenterLookupDispatchAction"
+    			parameter="methodname"
+    			scope="request"
+    			validate="true"
+    			input="EditSupportCenterPage">
+    	<forward name="BasePage" path="SupportCenter"/>
+    	</action>
+<!-- ===================Applications==================== -->	
+		 
+		 <action path="/VIMSApplicationAction" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationAction" input="Applications" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>	
+			<forward name="addApplication" path="AddApplication"/>
+		 </action>	
+		 <action path="/checkAppAvailability" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" parameter="param" input="Applications" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>	
+			<forward name="addApplication" path="AddApplication"/>
+		 </action>
+		 <action path="/PaginationAction" name="VIMSApplicationForm" type="com.vertex.VIMS.test.common.PaginationAction" input="Applications" parameter="param" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>
+			<forward name="vimsApplicationAction" path="/viewApplicationList.do?param=viewApplicationList"/>
+			<forward name="ViewApplication" path="ViewApplication"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="modifyPage" path="ModifyApplication"/>
+			<forward name="applicationSpecialist" path="ApplicationSpecialist"/>
+			<forward name="applicationModules" path="ApplicationModules"/>
+			<forward name="applicationGroups" path="ApplicationGroups"/>
+			<forward name="applicationCustomers" path="AppCustomers"/>	
+			<forward name="searchResult" path="Search"/>
+			<forward name="viewclients" path="Clients"/>	 
+			<forward name="Issuespage" path="ListofIssues"/> 	
+		</action>
+		
+	 	<action path="/VIMSApplicationLookupDispatchAction" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="Applications" parameter="param" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>
+			<forward name="vimsApplicationAction" path="/viewApplicationList.do?param=viewApplicationList"/>
+			<forward name="ViewApplication" path="ViewApplication"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="modifyPage" path="ModifyApplication"/>
+			<forward name="applicationSpecialist" path="ApplicationSpecialist"/>			
+			<forward name="applicationModules" path="ApplicationModules"/>			
+			<forward name="applicationGroups" path="ApplicationGroups"/>
+			<forward name="applicationCustomers" path="AppCustomers"/>
+			<forward name="applicationGroupsAction" path="/VIMSApplicationLookupDispatchAction.do?param=applicationGroups"/>
+			<forward name="viewApplicationSpecialistAction" path="/VIMSApplicationLookupDispatchAction.do?param=addApplicationSpecialist"/>			
+		</action>
+		
+		<action path="/viewApplicationList" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>
+			<forward name="vimsApplicationAction" path="/viewApplicationList.do?param=viewApplicationList"/>
+		</action>
+		<action path="/addApplicationPage" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>
+			<forward name="vimsApplicationAction" path="/viewApplicationList.do?param=viewApplicationList"/>
+			<forward name="addApplication" path="AddApplication"/>
+		</action>
+		<action path="/addApplication" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>
+			<forward name="vimsApplicationAction" path="/viewApplicationList.do?param=viewApplicationList"/>
+			<forward name="addApplication" path="AddApplication"/>
+		</action>
+		<action path="/getSupportManagerAction" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+			<forward name="applications" path="Applications"/>
+			<forward name="modifyPage" path="ModifyApplication"/>
+			<forward name="vimsApplicationAction" path="/viewApplicationList.do?param=viewApplicationList"/>
+			<forward name="addApplication" path="AddApplication"/>
+		</action>
+		<action path="/modifyApplication" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="ModifyApplication" parameter="param" scope="request" validate="true">
+			<forward name="applications" path="Applications"/>
+			<forward name="modifyPage" path="ModifyApplication"/>
+			<forward name="vimsApplicationAction" path="/viewApplicationList.do?param=viewApplicationList"/>
+		</action>
+		<action path="/ApplicationSpecialistsLink" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="ApplicationSpecialist" parameter="param" scope="request" validate="false">
+			<forward name="applicationSpecialist" path="ApplicationSpecialist"/>
+			<forward name="viewApplicationSpecialistAction" path="/VIMSApplicationLookupDispatchAction.do?param=addApplicationSpecialist"/>
+			<forward name="viewApplicationSpecialist" path="AppSpecialistView"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="applications" path="Applications"/>
+		</action>
+		<action path="/ApplicationSpecialists" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="ApplicationSpecialist" parameter="param" scope="request" validate="true">
+			<forward name="applicationSpecialist" path="ApplicationSpecialist"/>
+			<forward name="applicationSpecialistAction" path="/ApplicationSpecialistsLink.do?param=applicationSpecialist"/>
+			<forward name="viewApplicationSpecialistAction" path="/VIMSApplicationLookupDispatchAction.do?param=addApplicationSpecialist"/>
+			<forward name="viewApplicationSpecialist" path="AppSpecialistView"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="applications" path="Applications"/>
+		</action>
+		<action path="/ApplicationModulesLink" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="ApplicationModules" parameter="param"  scope="request" validate="false">
+			<forward name="appSubCatView" path="AppSubCatView"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="applicationModules" path="ApplicationModules"/>
+			<forward name="applications" path="Applications"/>
+		</action>
+		<action path="/ApplicationModules" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="ApplicationModules" parameter="param"  scope="request" validate="true">
+			<forward name="appSubCatView" path="AppSubCatView"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="applications" path="Applications"/>
+			<forward name="applicationModulesAction" path="/ApplicationModulesLink.do?param=applicationModules"/>
+			<forward name="applicationModules" path="ApplicationModules"/>
+		</action>
+		<action path="/ApplicationGroupsLink" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="ApplicationGroups" parameter="param" scope="request" validate="false">
+			<forward name="applicationGroups" path="ApplicationGroups"/>
+			<forward name="applications" path="Applications"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="applicationGroupsAction" path="/VIMSApplicationLookupDispatchAction.do?param=applicationGroups"/>
+		</action>
+		<action path="/ApplicationGroups" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="ApplicationGroups" parameter="param" scope="request" validate="true">
+			<forward name="applicationGroups" path="ApplicationGroups"/>
+			<forward name="applications" path="Applications"/>
+			<forward name="applicationGroupsAction" path="/VIMSApplicationLookupDispatchAction.do?param=applicationGroups"/>
+			<forward name="addApplication" path="AddApplication"/>
+		</action>
+		<action path="/ApplicationCustomersLink" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AppCustomers" parameter="param" scope="request" validate="false">
+			<forward name="applicationCustomers" path="AppCustomers"/>
+			<forward name="applications" path="Applications"/>
+			<forward name="addApplication" path="AddApplication"/>
+		</action>
+		<action path="/ApplicationCustomers" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AppCustomers" parameter="param" scope="request" validate="true">
+			<forward name="applicationCustomersAction" path="/ApplicationCustomersLink.do?param=applicationCustomers"/>
+			<forward name="addApplication" path="AddApplication"/>
+			<forward name="applications" path="Applications"/>
+		</action>
+		<action path="/viewApplicationAction" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AppCustomers" parameter="param" scope="request" validate="false">
+			<forward name="ViewApplication" path="ViewApplication"/>
+			<forward name="applications" path="Applications"/>
+		</action>
+		<action path="/getApplSLACreatedDetails" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+		<forward name="addApplication" path="AddApplication"/>
+		<forward name="applications" path="Applications"/>
+		</action>
+		
+		
+		<action path="/viewApplicationSLADetails"  name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+		<forward name="viewSLA" path="ViewApplicationSLADetails"/>
+		</action>
+		
+		
+		<action path="/backToApplicationList"
+            type="org.apache.struts.actions.ForwardAction" 
+            parameter="Applications"
+			validate="false"
+			input="AddApplication">				
+	 	</action>
+	 	<action path="/backToApplicationSpecialist"
+            type="org.apache.struts.actions.ForwardAction" 
+            parameter="ApplicationSpecialist"
+			validate="false"
+			input="AppSpecialistView">				
+	 	</action>
+	 	<action path="/backToApplicationModules"
+            type="org.apache.struts.actions.ForwardAction" 
+            parameter="ApplicationModules"
+			validate="false"
+			input="AppSubCatView">				
+	 	</action>
+		<!-- added by santhosh.k-->
+		<action path="/getApplSLACreatedDetails" name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+		<forward name="addApplication" path="AddApplication"/>
+		</action>
+		<!-- added by santhosh.k-->
+		<action path="/viewApplicationSLADetails"  name="VIMSApplicationForm" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" input="AddApplication" parameter="param" scope="request" validate="false">
+		<forward name="viewSLA" path="ViewApplicationSLADetails"/>
+		</action>
+		
+		
+		<action path="/backToApplicationList"
+            type="org.apache.struts.actions.ForwardAction" 
+            parameter="Applications"
+			validate="false"
+			input="AddApplication">				
+	 	</action>
+	 	<action path="/backToApplicationSpecialist"
+            type="org.apache.struts.actions.ForwardAction" 
+            parameter="ApplicationSpecialist"
+			validate="false"
+			input="AppSpecialistView">				
+	 	</action>
+	 	<action path="/backToApplicationModules"
+            type="org.apache.struts.actions.ForwardAction" 
+            parameter="ApplicationModules"
+			validate="false"
+			input="AppSubCatView">				
+	 	</action>
+
+		<!--  SLA added by santhosh.k -->  		
+		<action path="/sLA" type="com.vertex.VIMS.test.SLA.action.VIMSSLALookUpDispatchAction" input="SLA" validate="false" parameter="param" name="VIMSSLAForm" scope ="request"/>		
+		<action path="/getSLADetails" type="com.vertex.VIMS.test.SLA.action.VIMSSLALookUpDispatchAction" input="SLA" validate="false" parameter="param" name="VIMSSLAForm" scope ="request"/>		
+		<action path="/sLASettingLDAction" type="com.vertex.VIMS.test.SLA.action.VIMSSLALookUpDispatchAction"  input="SLA" validate="false" parameter="param" name="VIMSSLAForm" scope="request"/>		
+		<action path="/sLASettingUpdateAction" type="com.vertex.VIMS.test.SLA.action.VIMSSLALookUpDispatchAction"  input="SLA" validate="true" parameter="param" name="VIMSSLAForm" scope="request"/>		
+		<action path="/deleteSLA" type="com.vertex.VIMS.test.SLA.action.VIMSSLALookUpDispatchAction"  input="SLA" validate="false" parameter="param" name="VIMSSLAForm" scope="request"/>
+		
+
+
+<!-- =================== Employees==================== -->	
+		
+	  <action path="/TestIDEmployee" name="NewEmployeeFormBean" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" parameter="function" input="AddEmployee" scope="request"  validate="false"> 
+	   <forward name="addEmployee" path="AddEmployee"/>
+	  </action>
+	  
+	  <action path="/TestEmailIDEmployee" name="NewEmployeeFormBean" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" parameter="function" input="AddEmployee" scope="request"  validate="false"> 
+	   <forward name="addEmployee" path="AddEmployee"/>
+	  </action>
+	  
+	  <action path="/TestEditEmailIDEmployee" name="NewEmployeeFormBean" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" parameter="function" input="EditEmployee" scope="request"  validate="false"> 
+	   <forward name="addEmployee" path="EditEmployee"/>
+	  </action>
+	  
+		<action path="/employeenew" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeAction" name="EmployeeFormName" scope="session">
+			<forward name="testEmployee" path="Employees"/>
+		</action>
+		
+		<action  path="/employeeLookUp"  name="NewEmployeeFormBean"  validate="true" input="Employees" scope="request" parameter="function" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" >
+		<forward name="addEmployee" path="AddEmployee"/>
+		<forward name="modifyEmployee" path="EditEmployee"/>
+		<forward name="deleteEmployee" path="Employees"/>
+		<forward name="deletionFailure" path="Employees"/>
+		<forward name="addingEmployeeSuccess" path="Employees"/>
+		<forward name="addingEmployeeFailure" path="Employees"/>
+		<forward name="deleteEmployee" path="Employees"/>
+		<forward name="errorEdittingEmployee" path="Employees"/>
+		<forward name="viewEmployee" path="ViewEmployee"/>
+		<forward name="deletionSuccess" path="/employeenew.do" />
+		<forward name="modifyingEmployeeSuccess" path="/employeeLookupDispatch.do"/>
+		<forward name="modifyingEmployeeFailure" path="Employees"/>
+		<forward name="errorEdittingEmployee" path="Employees"/>
+		<forward name="HomePage" path="Employees"/>
+		</action>
+		
+		<action path="/EmpExport"  name="NewEmployeeFormBean"  validate="false" input="Employees" scope="request" parameter="function" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" >
+		</action>
+		
+		<action path="/employeeLookupDispatch"  name="NewEmployeeFormBean"  validate="false" scope="request" parameter="function" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" >
+		<forward name="testEmployee" path="Employees"/>
+		</action>
+		
+		<!-- ===for adding employee=== -->		
+		
+		<action  path="/EmpDetails"  name="NewEmployeeFormBean"  validate="true" scope="request" parameter="function" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" input="AddEmployee">
+		  <forward name="addingEmployeeFailure" path="Employees"/>
+		  <forward name="addingEmployeeSuccess" path="Employees"/>
+		  <forward name="deleteEmployee" path="Employees"/>
+		  <forward name="addEmployee" path="AddEmployee"/>
+		  <forward name="testEmployee" path="Employees"/>
+		  <forward name="modifyEmployee" path="EditEmployee"/>
+		</action>
+		
+		
+		<action  path="/ModifyCountry"  name="NewEmployeeFormBean"  validate="false" scope="request" parameter="function" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" input="EditEmployee">
+		 <forward name="addEmployee" path="AddEmployee"/>
+		</action>
+		
+		<action  path="/addEmployeeLookUp"  name="NewEmployeeFormBean"  scope="request" parameter="function" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" input="AddEmployee">
+		<forward name="addingEmployeeFailure" path="/Employees"/>
+		<forward name="addingEmployeeSuccess" path="/Employees"/>
+		</action>
+		
+		<action  path="/modifyEmployeeLookUp"  name="NewEmployeeFormBean"  scope="request" parameter="function" type="com.vertex.VIMS.test.employee.action.VIMSEmployeeLookUpDispatchAction" input="EditEmployee" validate="true">
+		<forward name="modifyingEmployeeSuccess" path="Employees"/>
+		<forward name="modifyingEmployeeFailure" path="Employees"/>
+		</action>	
+	
+	<!-- ==============End of Employees==================== -->	
+	<!-- ===================VIMS changePassword Page==================== -->	
+		
+    <action path="/changePwd" type="com.vertex.VIMS.test.changePassword.action.changePasswordLookUpDispatchAction" parameter="methodname" name="changePasswordForm"  input="VIMSHome1" scope="request" validate="true">
+		   <forward name="home" path="VIMSHome"/>
+		   <forward name="home1" path="VIMSHome1"/>
+		 </action> 
+	
+	 <action path="/checkPassword" type="com.vertex.VIMS.test.changePassword.action.changePasswordLookUpDispatchAction" parameter="methodname" name="changePasswordForm"  scope="request" validate="false">
+		   <forward name="home" path="VIMSHome"/>
+		   <forward name="home1" path="VIMSHome1"/>
+		 </action> 
+		
+	<!-- ================== LDAP Server Configuration ====================== -->
+	  <!-- Configuration Settings Home Page Added by santhosh.k on 02/11/2009 -->
+	   <action path="/configHomePage" forward="configHome">
+	   </action>
+	
+		
+	<action path="/ldapServerAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="ldapTile" validate="false" scope="request"/>
+        <action path="/ldapAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="ldapTile" validate="true" scope="request"/>
+        <action path="/ldapAction1" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="modifyLdapTile" validate="true" scope="request"/>
+	 	<action path="/modifyLdapServerDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" input="modifyLdapTile" name="configForm" validate="false" scope="request"/>
+
+ 	 <!--	<action path="/mailAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="mailTile" validate="true" scope="request"/>
+	 	<action path="/ldapServer" forward="ldapTile" />  -->
+        
+        <action path="/mailAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="mailTile" validate="true" scope="request"/>
+        <action path="/mailAction1" type="com.vertex.VIMS.test.ldap.action.ConfigAction"  name="configForm" parameter="param" input="modifyMailTile" validate="true" scope="request"/>
+        <action path="/modifyMailServerDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" input="modifyMailTile" name="configForm" validate="false" scope="request"/>
+        <action path="/mailServerAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="mailTile" validate="false" scope="request"/>
+	   
+	    <action path="/customizeHome" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="homeTile" validate="false" scope="request"/>
+	    <action path="/customize" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="homeTile" validate="true" scope="request"/>
+	    <action path="/RoleAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="RoleTile" validate="false" scope="request" />
+	    <action path="/viewNewApplicationList" type="com.vertex.VIMS.test.applications.action.VIMSApplicationLookupDispatchAction" parameter="param" validate="false" name="VIMSApplicationForm" input="newApplicationListTile"/>
+	    <action path="/viewIssuesList" type="com.vertex.VIMS.test.listofissues.action.ListofIssuesDispatchAction" parameter="param" validate="false" name="ListofIssuesForm" input="issuedisplayTile" />    
+	    <action path="/viewNewCustomerList" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" validate="false" name="VIMSCustomerForm" input="newCustomerDisplayTile" />
+	    
+	    <action path="/customizeFields" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="FieldConfigTile" validate="false" scope="request" />
+	    
+	    
+	    <!-- Field Customization -->
+	    <action path="/insertSpecificKeywordValue" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="PositionTile" validate="true" scope="request"/>
+         	    
+	    <action path="/LocationAction" forward="LocationTile" />
+	    <action path="/testAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="LocationTile" validate="false" scope="request"/>  
+	    <action path="/PositionAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="PositionTile" validate="false" scope="request"/>
+	    <action path="/StateAction" forward="StateTile" />
+	    
+	    <action path="/tabCustomization" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="tabTile" validate="false" scope="request"/>
+	    
+	    <action path="/modifyPositionDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="PositionTile" validate="false" scope="request"/>
+	    <action path="/deletePositionDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="PositionTile" validate="false" scope="request"/>
+	    
+	   <!--  Role Actions  --> 
+	    <action path="/insertCountryDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="CountryTile" validate="false" scope="request"/> 
+	    <action path="/modifyCountry" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="CountryTile" validate="false" scope="request"/>
+	    <action path="/insertRoleDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="RoleTile" validate="true" scope="request"/>
+	    <action path="/modifyRoleDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="RoleTile" validate="false" scope="request"/> 
+	    <action path="/deleteRoleType" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="RoleTile" validate="false" scope="request"/>
+	    
+	   <!--  End  Role Actions  -->
+	   
+	     
+	    <action path="/setServerDefaultStatus" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="ldapTile" validate="false" scope="request"/>
+	    <!-- End of  Field Customization   --> 
+	<!--  End of LDAP Server Configuration ========================= --> 	
+
+<!-- =================== Clients==================== -->	
+	 <action path="/dispatchClient" name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" input="TestCustomer" scope="request"  validate="true">
+	  	
+	  </action>
+       
+      <action path="/TestIDClient" name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" input="TestCustomer" scope="request"  validate="false"> 
+	  
+	  </action>
+	   
+      <action  path="/ModifyCountry1"  name="VIMSCustomerForm"  validate="false" scope="request" parameter="function" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" input="DisplayClient">
+	  </action>
+		
+      
+      <action path="/modifyClient" name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" input="DisplayClient" scope="request"  validate="true"> 
+	       <forward name="modify" path="Clients"/>
+	  </action>
+	   
+      <action path="/Details" name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" scope="request"  validate="false"> 
+	  </action> 
+       
+      <action path="/customerDetails" name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" input="Clients" scope="request"  validate="true"> 
+	  </action>
+	  
+	   <action path="/TestEmailIDCustomer" name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" input="TestCustomer" scope="request"  validate="false"> 
+	   <forward name="page" path="TestCustomer"/>
+	  </action>
+
+      <action path="/TestEditEmailIDCustomer" name="VIMSCustomerForm" type="com.vertex.VIMS.test.clients.action.VIMSClientLookUpDispatchAction" parameter="client" input="DisplayClient" scope="request"  validate="false"> 
+	   <forward name="page" path="DisplayClient"/>
+	  </action>
+
+<!-- =================== New Issues==================== -->	
+        <action path="/newIssue" type="com.vertex.VIMS.test.newissue.action.VIMSNewIssue" name="NewIssueForm" scope="request" validate="false" input="NewIssues">
+        <forward name="newIssuepage" path="NewIssues"/>
+        </action>
+        <action path="/newIssueSub" type="com.vertex.VIMS.test.newissue.action.VIMSNewIssue" name="NewIssueForm" scope="request" input="NewIssues" validate="false">
+        <forward name="newIssuepage" path="NewIssues"/>
+        </action>
+        <action path="/newIssues" type="com.vertex.VIMS.test.newissue.action.VIMSNewIssue" name="NewIssueForm" scope="request" input="NewIssues" validate="false">
+        <forward name="newIssuepage" path="NewIssues"/>
+        <forward name="success" path="NewIssueSuccess"/>
+        <forward name="failure" path="NewIssueFailure"/>
+        </action>
+        <action path="/newIssueSLA" type="com.vertex.VIMS.test.newissue.action.VIMSNewIssue" name="NewIssueForm" scope="request" validate="false" input="NewIssues">
+        <forward name="newIssuepage" path="NewIssues"/>
+        </action>
+        <action path="/newIssueReset" type="com.vertex.VIMS.test.newissue.action.VIMSNewIssue" name="NewIssueForm" scope="request" validate="false" input="NewIssues">
+        <forward name="newIssuepage" path="NewIssues"/>
+        </action>
+<!-- =================== List of Issues==================== -->	
+		<action path="/ListofIssues" name="ListofIssuesForm" 	type="com.vertex.VIMS.test.listofissues.action.ListofIssuesDispatchAction" 	parameter="methodname" scope="request" validate="false">
+ 
+    	<forward name="Issuespage" path="ListofIssues"/>
+    	<forward name="success" path="NewSupportCenterSuccess"/>
+    	<forward name="failure" path="NewSupportCenterFailure"/>
+    	<forward name="AssignmentPage" path="IssueAssignment"/>
+    	<forward name="IssueAssignSuccessPage" path="IssueAssignmentSuccess"/>
+    	<forward name="IssueAssignFailurePage" path="IssueAssignmentFailure"/>
+    	
+    	</action>
+    	<action path="/ListofIssuesSubmit"
+    		name="ListofIssuesForm"
+    		type="com.vertex.VIMS.test.listofissues.action.ListofIssuesDispatchAction"
+    		parameter="methodname"
+    		scope="request" input="IssueAssignment"
+    		validate="true">
+    		
+    	<forward name="Issuespage" path="ListofIssues"/>
+    	<forward name="success" path="NewSupportCenterSuccess"/>
+    	<forward name="failure" path="NewSupportCenterFailure"/>
+    	<forward name="AssignmentPage" path="IssueAssignment"/>
+    	<forward name="IssueAssignSuccessPage" path="IssueAssignmentSuccess"/>
+    	<forward name="IssueAssignFailurePage" path="IssueAssignmentFailure"/>
+    	
+    	</action>		
+    	
+    	<action path="/incidentInformation" forward="IncidentInformation"/>
+		<action path="/incidentInformation" forward="IncidentInformation"/>
+		<action path="/noOfIssuesEachApp" forward="NoOfIssuesEachApp"/>
+		<action path="/incidentAssignment" forward="IncidentAssignment"/>
+		
+		
+		
+		
+
+<!-- =================== Employee Issues==================== -->	
+		<action path="/empIssues" forward="EmployeeIssues"/>
+		<action path="/empMyIssues" forward="EmployeeMyIssues"/>
+		<action path="/empOtherIssues" forward="EmployeeOtherIssues"/>
+
+
+
+<!-- ==============Purging==================== -->		
+		<action  path="/purgingLookupDispatch"  name="VIMSPurgingForm"  validate="false" input="Purging" scope="request" parameter="purgingfunction" type="com.vertex.VIMS.test.purging.action.VIMSPurgingLookUpDispatchAction" >
+		<forward name="PurgingForward" path="Purging"/>
+		</action>
+	<!-- =============End of Purging==================== -->
+
+
+<!-- Escalation added by santhosh.k -->	
+		<action path="/escalation" type="com.vertex.VIMS.test.escalation.action.EscalationLookUpDispatchAction" input="VIMSBase" parameter="method"  >
+		<forward name="escalationPage" path="Escalation"/>
+		<forward name="issueReAssignment" path="IncidentReAssignment"/>
+		</action>
+
+
+
+
+<!--Management Reports  created by santhosh.k on 11/27/2008-->	
+
+		<action path="/reports"  type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="ManagementReports" validate="false" parameter="reportType" name="ReportsForm" />
+		<action path="/reportsDisplay" type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="ManagementReports" validate="false" parameter="reportType" name="ReportsForm" >
+		<forward name="reportChoice" path="ManagementReports"/>
+		<forward name="display" path="ReportsDisplay"/>
+		<forward name="displaySLAInformation" path="SLAStatusBar"/>
+		</action>
+		<action path="/reportsGenerate" type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="ManagementReports" validate="false" parameter="reportType" name="ReportsForm" >			
+		</action>
+		<action path="/getIssuesTypes" type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="Specificstatbar" validate="false" parameter="reportType" name="ReportsForm">
+		</action>		
+		<action path="/reportsBySpecificStatus" type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="Specificstatbar" validate="true" parameter="reportType" name="ReportsForm" >	
+		</action>
+		<action path="/generateSpecificStatusReports" type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="ManagementReports" validate="false" parameter="reportType" name="ReportsForm" >			
+		</action>
+		
+		<action path="/specificstatbar" type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="Specificstatbar" validate="false" parameter="reportType" name="ReportsForm"/>
+		<action path="/noOfIssuesPerDateBar" forward="NoOfIssuesPerDateBar"/>
+		<action path="/sLAStatusBar" forward="SLAStatusBar" />
+		<!-- added by santhosh.k on 01/13/2009 -->
+		
+		<action path="/customReports"  type="com.vertex.VIMS.test.reports.action.VIMSReportsLookUpDispatchAction" input="CustomReports" validate="false" parameter="reportType" name="CustomReportsForm" scope="session" />
+	<!-- =======Modified Reports  Layout Actions==================-->	
+		<action path="/reportsHome" forward="ReportsHome"/>
+		<action path="/VIMSReportsLookUpDispatchAction" type="com.vertex.VIMS.test.reportsTest.action.VIMSReportsLookUpDispatchAction" input="ApplicationReports" validate="false" parameter="param" name="ApplicationReportsForm" scope="request">
+			<forward name="ApplicationReports" path="ApplicationReports"/>
+			<forward name="EmployeeReports" path="EmployeeReports"/>			
+			<forward name="AssignedEmployeeReports" path="AssignedEmployeeReports"/>
+			<forward name="CustomerReports" path="CustomerReports"/>
+			<forward name="GenerateEmployeeReports" path="GenerateEmployeeReports"/>
+			<forward name="GenerateCustomerReports" path="GenerateCustomerReports"/>
+			<forward name="SLAReports" path="SLAReports"/>			
+		</action>
+		<action path="/AssignedEmployeeReport" type="com.vertex.VIMS.test.reportsTest.action.VIMSReportsLookUpDispatchAction" input="AssignedEmployeeReports" validate="false" parameter="param" name="ApplicationReportsForm" scope="request">
+			<forward name="EmployeeReports" path="EmployeeReports"/>			
+			<forward name="AssignedEmployeeReports" path="AssignedEmployeeReports"/>
+			<forward name="GenerateEmployeeReports" path="GenerateEmployeeReports"/>
+		</action>
+		<action path="/OtherEmployeeReport" type="com.vertex.VIMS.test.reportsTest.action.VIMSReportsLookUpDispatchAction" input="EmployeeReports" validate="false" parameter="param" name="ApplicationReportsForm" scope="request">
+			<forward name="EmployeeReports" path="EmployeeReports"/>			
+			<forward name="AssignedEmployeeReports" path="AssignedEmployeeReports"/>
+			<forward name="GenerateEmployeeReports" path="GenerateEmployeeReports"/>
+		</action>
+		
+	  <action path="/issueReportForm" type="com.vertex.VIMS.test.reportsTest.action.VIMSReportsLookUpDispatchAction" name="IssueReportForm" parameter="param" input="IssueReportBase" scope="request" validate="false"/>
+	 <action path="/generateIssueReport" type="com.vertex.VIMS.test.reportsTest.action.VIMSReportsLookUpDispatchAction" name="IssueReportForm" parameter="param" input="IssueReportBase" scope="request" validate="false"/>
+	 <action path="/generateIssueExcelFile" type="com.vertex.VIMS.test.reportsTest.action.VIMSReportsLookUpDispatchAction" name="IssueReportForm" parameter="param" input="IssueReportListTile" scope="request" validate="false"/>
+	 <action path="/getIssueDetailView" type="com.vertex.VIMS.test.reportsTest.action.VIMSReportsLookUpDispatchAction" name="IssueReportForm" parameter="param" input="displayDetailViewTile" scope="request" validate="false" />
+	<!-- =======End of  Modified Reports  Layout Actions================== -->
+	
+		
+
+<!-- =================== Search==================== -->	
+		<action path="/search" name="VIMSSearchForm" type="com.vertex.VIMS.test.search.action.VIMSSearchAction"  input="Search" scope="request"  validate="true"> 
+		  <forward name="page" path="Search"/>
+		  <forward name="searchResult" path="Search"/>
+        </action>
+
+<!-- ===================help==================== -->	
+		<action path="/help" forward="Help"/>
+		
+<!-- =======================================CUSTOMER LOGIN==================================== -->	
+		<action path="/VIMSCustomerLookupDispatchAction" name="VIMSSearchForm" type="com.vertex.VIMS.test.search.action.VIMSSearchAction"  input="Search" scope="request"  validate="true"> 
+		  <forward name="page" path="Search"/>
+		  <forward name="searchResult" path="SearchResult"/>
+        </action>
+
+<!-- =================== Footer page contents==================== -->	
+		<action path="/FAQ"  type="com.vertex.VIMS.test.VIMSFAQ.action.VimsFaq" scope="request"  validate="false"> 
+		<forward name="FAQ" path="FAQ"/>
+		</action>
+	    
+	    <action path="/AboutUs"  type="com.vertex.VIMS.test.VIMSAboutUs.action.AboutUS" scope="request"  validate="false"> 
+		<forward name="AboutUs" path="AboutUs"/>
+		</action>
+		
+		<action path="/privacyPolicy"  type="com.vertex.VIMS.test.VIMSPrivacyPolicy.action.VIMSPrivacyPolicy" scope="request"  validate="false"> 
+		<forward name="privacyPolicy" path="privacyPolicy"/>
+		</action>
+	   
+	    <action path="/termsconditions"  type="com.vertex.VIMS.test.VIMSTermsConditions.action.VIMSTermsConditions" scope="request"  validate="false"> 
+		<forward name="termsconditions" path="termsconditions"/>
+		</action>
+		
+		<action path="/OfficeLocation" forward="OfficeLocation"/>
+<!-- ===================Logout ==================== -->	
+
+		<action path="/logOut" type="com.vertex.VIMS.test.logout.action.VIMSLogout" />
+<!-- =================== Construction Page==================== -->	
+		 <action path="/constructionPage" forward="/construction.jsp"/>
+
+	<!-- =================== My To do List ==================== -->	
+			<action path="/EmpMyToDoListLookUp" name="MyToDoListFormBean" type="com.vertex.VIMS.test.mytodolist.action.VIMSMyToDoListLookupDispatchAction" parameter="MyFunction" scope="request" validate="false">
+		    	   <forward name="MyToDoListForward" path="MyToDoList"/>		    	   
+		    </action>
+ 	
+      <!-- Common tab action  -->
+      <action path="/TabHome" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="TabForm" input="TabHomeTile" validate="false"/>
+      
+      <action path="/getNavigationSettings" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="TabForm" input="TabHomeTile" validate="false" scope="session"/>
+      
+      <action path="/storeTabSettings" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="TabForm" input="TabHomeTile" validate="false" scope="session"/>
+      
+      <action path="/tabTest" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="tabTile" validate="false"/>
+      
+      
+      <!-- End of common tab actions -->	
+	  
+	  <!-- Added by Rajashekar -->
+	  <action path="/insertLocationDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="LocationTile" validate="true" scope="request"/>
+	  <action path="/modifyLocationDetails" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="LocationTile" validate="false" scope="request"/>	  
+	  <!--  -->  
+	  
+	  
+	  <action path="/CountryAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="CountryTile" validate="false" scope="request" />
+	  <action path="/StateAction" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="configForm" input="CountryTile" validate="false" scope="request" />
+	  <action path="/footerCustomization" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="FooterForm" input="FooterTile" validate="false" scope="request" />
+	  <action path="/storeContent" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="FooterForm" input="FooterTile" validate="false" scope="request" />
+	  <action path="/getOptionContent" type="com.vertex.VIMS.test.ldap.action.ConfigAction" parameter="param" name="FooterForm" input="FooterTile" validate="false" scope="request" />
+	  	
+		</action-mappings>
+	<!-- =======================================Message Resources -->		
+
+		<message-resources parameter="resources.VIMSApplication"/>
+
+	<!-- =======================================Plugin for Tiles -->
+
+	<plug-in className="org.apache.struts.tiles.TilesPlugin">
+      <set-property property="definitions-config" 
+	  value="/WEB-INF/tiles-defs.xml" />
+    </plug-in>
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+	<set-property property="pathnames" 
+		  value="/WEB-INF/validator-rules.xml, /WEB-INF/validation.xml" />
+    </plug-in> 
+</struts-config>

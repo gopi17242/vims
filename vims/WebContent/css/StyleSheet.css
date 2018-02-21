@@ -1,0 +1,864 @@
+.menutitle{
+cursor:pointer;
+margin-bottom: 2px;
+background-color:#64a6d8;
+color:#000000;
+width:166px;
+padding:2px;
+text-align:left;
+font-weight:bold;
+/*/*/border:1px solid #2b6ba7;/* */
+FONT-SIZE: 70%;
+COLOR: white;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 15px;
+}
+.homelinkbtn
+{
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 70%;
+	COLOR: white;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height:15px;
+	font-weight:bold;
+
+}
+
+.hometitle{
+ 
+
+background-color:#64a6d8;
+color:red;
+width:166px;
+padding:2px;
+text-align:left;
+font-weight:bold;
+
+FONT-SIZE: 70%;
+COLOR: white;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 15px;
+}
+
+
+.tBox {
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 60%;
+	COLOR: #000000;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 10px;
+	
+}
+
+.submenu{
+margin-bottom: 0.5em;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+.style1 {
+	color: #FFFFFF
+}
+
+.navLink {
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR: black;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+
+.navLink:hover {
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR: orange;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+
+
+.mylable{
+
+display:none;
+FONT-WEIGHT:normal;
+	FONT-SIZE: 60%;
+	font-weight:bold;
+	COLOR: red;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+}
+.linkPag{
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 70%;
+	COLOR: #093869;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height:18px;		
+}
+.heading_gray {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 70%;
+	COLOR: gray;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	line-height: 20px;
+	text-decoration: none;
+}
+
+.heading_blue {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 70%;
+	COLOR: #093869;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+.heading_white {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 70%;
+	COLOR: white;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+
+
+.heading_orange {
+	FONT-WEIGHT: bold;
+	FONT-SIZE: 70%;
+	COLOR: #FF6600;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 24px;
+}
+
+.labelNotice
+{
+	font-family: verdana;
+	font-size: 11px;
+	font-style: normal;
+	color: Gray;
+	text-decoration: none;
+	text-align: left;
+}
+/*Master Page Menu*/
+.nav-lt-men-root {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;		
+	background-image:url(../Images/leftNavpanelheader.png);	
+	background-repeat:no-repeat;
+	background-position:center;		
+	width:183px;
+	margin-left:5px;	
+	padding-left:1px;	
+}
+/*Mater page menu item*/
+.text-lt-men {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight:normal;
+	color: #000000;
+	text-decoration: none;
+	padding-left: 1px;
+}
+/*Master page menu hoover*/
+.text-lt-men:hover {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;	
+	color: #000000;
+	text-decoration: none;
+	padding-left: 1px;
+}
+/*Master page menu selected item*/
+.text-lt-men:selected {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: bold;
+	color: #000000;
+	text-decoration: none;	
+	padding-left: 1px;
+}
+/*Master page left panel background*/                   
+.leftpanel_background {
+	background-image:url(../Images/leftNavpanel.gif);	
+	background-repeat:no-repeat;
+	width:183px;	
+}
+.leftnav_centercourt
+{
+	background-image:url(../Images/leftnavCenterCourt.gif);	
+	background-repeat:repeat-y;
+	width:183px;	
+}
+.leftnav_header
+{
+	background-image:url(../Images/leftnavHeader.gif);	
+	background-repeat:no-repeat;
+	width:183px;		
+}
+.leftnav_footer
+{
+	background-image:url(../Images/leftnavfooter.gif);	
+	background-repeat:no-repeat;
+	background-position:top;
+	width:183px;		
+}
+.footer {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	padding-left: 0px;
+	background-color:#daedff;
+	text-align:center;	
+}
+.homeHeader_background 
+{
+	background-image:url(../Images/navigationTab.gif);
+	height:25px;
+}
+/*Table background color*/
+.table_backcolor {	
+	text-decoration: none;
+	padding-left: 1px;
+	background-color:#f6f6f6;
+}
+.table_backcolor1 {	
+	text-decoration: none;
+	padding-left: 1px;
+	background-color:#f6f6f6;
+	border: 2px solid Black;
+	border-color:Black;
+	border-width:2px;
+}
+/* Table Body text*/
+.bodytext {
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+
+/*Added by nazrul*/
+.bodytextwhite {
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#ffffff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+/*This is for label*/
+.labelField {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	color:Black;
+	text-decoration: none;
+	padding-left: 0px;
+	line-height:24px;
+}
+.labelMandatory {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	color: red;
+	text-decoration: none;
+	padding-left: 0px;
+}
+/*This is for Label error Message*/
+
+/* This is for No records found ,Saved Sucessfully etc..*/
+.labelMessage {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight:bold;
+	color: Blue;
+	text-decoration: none;
+	padding-left: 0px;	
+}
+
+.labelHeading {	
+	background-image:url(../Images/centerpaneltopmiddle.gif);	
+	background-repeat:no-repeat;
+	height:100%;	
+}
+
+/* Added By Aditya for BreadCrumbs */
+.heading_bread_black {
+	
+	font-size: 70%;
+	COLOR: #333333;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	
+}
+
+.heading_black {
+	FONT-WEIGHT: bold;
+	font-size: 90%;
+	COLOR: #333333;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	
+}
+
+.heading_black1 {
+	FONT-WEIGHT: bold;
+	font-size: 80%;
+	COLOR: #e6e6e6;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	
+}
+
+.heading_white {
+	FONT-WEIGHT: bold;
+	font-size: 70%;
+	COLOR:White;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+}
+.HeadingBlock {
+	FONT-WEIGHT:Bold;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+	text-align:center;
+	background-color:#4B95DB;
+	
+}
+/*This is for Grid header*/
+.gridBluheader
+{
+	background-color :#64a6d8;	
+	
+}
+/*This is for grid alternate row*/
+.gridAlternate {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	color: #333333;	
+	text-decoration: none;
+	padding-left: 0px;	
+	background-color:#e5f3fd;
+	line-height :20px;
+	text-align:left;
+}
+/*This is for Grid Row*/
+.gridRow {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	padding-left: 0px;
+	background-color:White;	
+	line-height :20px;
+	text-align:left;
+}
+/*This is for grid selected row*/
+.gridRowSelected {
+	background-image:url(../Images/selectedColor.gif);	
+	background-repeat:no-repeat;
+	width:100%;
+}
+/*This is for Grid footer*/
+.gridFooter {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight:bold;
+	COLOR: #333333;
+	text-decoration:none;
+	background-color:#ececec;
+	text-align:center;
+}
+/*This is for multiline textbox*/
+.textbox_remarks {	
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+}
+
+/*This is for very short textbox*/
+.textbox_veryshort {
+	width:40px;
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+
+}
+/*This is for short textbox*/
+.textbox_short {
+	width:100px;
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+
+}
+/*This is for long textbox*/
+.textbox_long {
+	width:200px;
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	
+}	
+/*This is for link button(search,delete,save)*/
+/*changed by khaja*/
+
+.linkbutton_background {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:20px;
+	width:80px;
+}
+
+.golinkbutton_background {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:15px;
+	width:25px;
+}
+
+.SLAlinkbutton_background {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:20px;
+	width:100px;
+}
+
+
+.linkbutton_addApplication {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:20px;
+	width:110px;
+}
+
+/* added by santhosh.k*/
+.linkbutton_Reports {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:20px;
+	width:120px;
+}
+.linkbutton_applicationModules {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:20px;
+	width:125px;
+}
+
+/* Used for Arrow buttons (<<) */
+/*Added by khaja*/
+
+.linkbutton_arrow {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:20px;
+	width:25px;
+}
+/* End of Arrow buttons(<<)*/
+
+
+/*This is for default textbox*/
+.textbox_default 
+{	
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+}
+
+/*This is for dropdownlist*/
+.dropdownlist  
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	COLOR:#000000;
+	text-decoration: none;
+	padding-left: 0px;
+}
+/*This is for common link button this is for export to excel*/
+.linkbtn
+{
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 80%;
+	COLOR: #006699;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height:18px;
+
+}
+/* This is for Master page Link Button Username */
+.linkbtnusername
+{
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 70%;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	line-height:18px;
+
+}
+.multiplelist  
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	COLOR:#000000;
+	text-decoration: none;
+	padding-left: 0px;
+	width:250px;
+}
+
+
+.eXtremeTable {
+	margin: 0;
+	padding: 0;
+	/*background-color: red;*/
+}
+
+.eXtremeTable select {
+	font-family: Verdana;
+	font-size: 9px;
+	border: solid 1px #EEE;
+	width: 75px;
+}
+
+.eXtremeTable .tableRegion {
+	border: 1px solid silver;
+	padding: 2px;
+	font-family:Verdana;
+	font-size: 10px;
+	margin-top: 7px;
+}
+.eXtremeTable .tableHeader {
+	background-color: #64a6d8;
+	color: white;
+	font-family:Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 4;
+	padding-bottom: 4;
+	margin: 0;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-color: white;
+	
+}
+
+.eXtremeTable .tableHeaderSort {
+	background-color: #64a6d8;
+	color: #093869;
+	font-family:Verdana;
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+	padding-right: 3px;
+	padding-left: 3px;
+	padding-top: 4;
+	padding-bottom: 4;
+	border-right-style: solid;
+	border-right-width: 1px;
+	border-color: white;
+	
+}
+
+.eXtremeTable .odd a, .even a {
+	
+	line-height:18px;
+	font-size: 10px;
+}
+
+.eXtremeTable .odd td, .eXtremeTable .even td {
+	padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px;
+	vertical-align: top;
+	font-family:Verdana;
+	font-size: 10px;
+	line-height:18px;
+	
+}
+
+.eXtremeTable .odd {
+	background-color:#e0f2ff;
+	line-height:18px;
+
+}
+
+.eXtremeTable .even {
+  	background-color:white;
+  	line-height:18px;
+  	
+}
+
+.eXtremeTable .highlight td {
+	color: black;
+	font-size: 10px;
+	padding-top: 2px;
+	padding-right: 3px;
+	padding-bottom: 2px;
+	padding-left: 3px;
+	vertical-align: top;
+	background-color:#c1e4fe;
+	line-height:18px;
+}
+
+.eXtremeTable .highlight a, .highlight a {
+	color: black;
+	font-size: 10px;
+}
+
+.eXtremeTable .toolbar {
+	background-color: #F4F4F4;
+	font-family:Verdana;
+	font-size: 9px;
+	margin-right: 1px;
+	border-right: 1px solid silver;
+	border-left: 1px solid silver;
+	border-top: 1px solid silver;
+	border-bottom: 1px solid silver;
+}
+
+.eXtremeTable .toolbar td {
+	color: #444444;
+	padding: 0px 3px 0px 3px;
+	text-align:center;
+}
+
+.eXtremeTable .separator {
+	width: 7px;
+}
+
+.eXtremeTable .statusBar {
+	background-color: #F4F4F4;
+	font-family:Verdana;
+	font-size: 10px;
+}
+
+.eXtremeTable .filterButtons {
+	background-color: #efefef;
+	text-align: right;
+}
+
+.eXtremeTable .title {
+	color: #444444;
+	font-weight: bold;
+	font-family:Verdana;
+	font-size: 18px;
+	vertical-align: middle;
+}
+
+.eXtremeTable .title span {
+	margin-left: 7px;
+}
+
+.eXtremeTable .formButtons {
+	display: block;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+
+.eXtremeTable .formButton {
+	cursor: pointer;
+	font-family:Verdana;
+	font-size:10px;
+	font-weight: bold;
+	background-color: #308dbb;
+	color: white;
+	margin-top: 5px;
+	border: outset 1px #333;
+	vertical-align: middle;
+}
+
+.eXtremeTable .tableTotal {
+	background-color: #FFFFFF;
+	border-top: solid 1px Silver;	
+}
+
+.eXtremeTable .tableTotalEmpty {
+	background-color: #FFFFFF;	
+}
+
+/* Added By Aditya for TextArea */
+.textArea {
+	width:500px;
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 100%;
+	COLOR:gray;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	
+}
+/* Added By Aditya for BigTextArea */
+.BigtextAreaDescription 
+{
+	width:520px;
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:gray;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+}
+
+.BigtextArea
+{
+	width:520px;
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+}
+/*Added by Aditya */
+
+.heading_breadcrumb_blue {
+	
+	FONT-SIZE: 70%;
+	COLOR: #0000FF;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+	text-decoration:underline
+}
+/*added by santhosh for reports page*/
+.linkbutton_Reports {
+	font-weight:bold;
+	font-size: 70%;
+	color:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	text-align:center;
+	vertical-align:middle;
+	background-image:url(../Images/button.png);
+	background-repeat:no-repeat;
+	line-height:20px;
+	width:120px;
+}
+
+
+/*This is for dropdownlist*/
+.file_Upload  
+{
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 70%;
+	font-weight: normal;
+	COLOR:#000000;
+	padding-left: 0px;
+	height:20px;
+}
+
+.heading_login_white {
+
+	FONT-SIZE: 80%;
+	COLOR: white;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height: 20px;
+}
+/*Added by khaja*/
+.footerLinkbtn
+{
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 65%;
+	COLOR: #006699;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height:18px;
+
+}
+/* Issues Link Button */
+.issuesLinkbtn
+{
+	FONT-WEIGHT: normal;
+	FONT-SIZE: 70%;
+	COLOR: #006699;
+	FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+	line-height:18px;
+
+}
+.Big1textArea 
+{
+	width:200px;
+	FONT-WEIGHT:normal;
+	FONT-SIZE: 70%;
+	COLOR:#000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	TEXT-DECORATION: none;
+}

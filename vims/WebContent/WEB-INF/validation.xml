@@ -1,0 +1,57 @@
+<!DOCTYPE form-validation PUBLIC "-//Apache Software Foundation//DTD Commons Validator Rules Configuration 1.1.3//EN" "http://jakarta.apache.org/commons/dtds/validator_1_1_3.dtd">
+<form-validation>
+<formset>
+<form name="login">
+
+		<field property="userId" depends="required">
+			<arg0  key="VIMSApplication.userId"/>
+		</field>
+
+		<field property="password" depends="required">
+		<arg0 key="VIMSApplication.password"/>
+		</field>
+</form>
+<form name="VIMSSLAForm">
+		
+		<field property="application" depends="required">
+			<arg0 key="VIMS.SLA.APPLICATION"/>
+		</field>
+		<field property="criticalResponseTime" depends="required,integer">
+			<arg0 key="VIMS.SLA.CRITICAL_RESPONSE_TIME"/>
+			<arg1 key="VIMS.SLA.CRITICAL_RESPONSE_TIME"/>
+		</field>
+		<field property="criticalWarningInterval" depends="required,integer">
+			<arg0 key="VIMS.SLA.CRITICAL_WARNING_INTERVAL"/>
+			<arg1 key="VIMS.SLA.CRITICAL_WARNING_INTERVAL"/>
+		</field>
+		<field property="majorResponseTime" depends="required,integer">
+			<arg0 key="VIMS.SLA.MAJOR_RESPONSE_TIME"/>
+			<arg1 key="VIMS.SLA.MAJOR_RESPONSE_TIME"/>
+		</field>
+		<field property="majorWarningInterval" depends="required,integer">
+			<arg0 key="VIMS.SLA.MAJOR_WARNING_INTERVAL"/>
+			<arg1 key="VIMS.SLA.MAJOR_WARNING_INTERVAL"/>
+		</field>
+		<field property="minorResponseTime" depends="required,integer">
+			<arg0 key="VIMS.SLA.MINOR_RESPONSE_TIME"/>
+			<arg1 key="VIMS.SLA.MINOR_RESPONSE_TIME"/>
+		</field>
+		<field property="minorWarningInterval" depends="required,integer">
+			<arg0 key="VIMS.SLA.MINOR_WARNING_INTERVAL"/>
+			<arg1 key="VIMS.SLA.MINOR_WARNING_INTERVAL"/>
+		</field>
+</form>
+<form name="ReportsForm">
+
+		<field property="chartType" depends="required">
+			<arg0  key="VIMS.REPORTS.CHART_TYPE"/>
+		</field>
+		<field property="ApplicationSelected" depends="required">
+		<arg0 key="VIMS.REPORTS.APPLICATION_SELECTED"/>
+		</field>
+		<field property="issueTypeSelected" depends="required">
+		<arg0 key="VIMS.REPORTS.ISSUE_TYPE"/>
+		</field>
+</form>
+</formset>
+</form-validation>

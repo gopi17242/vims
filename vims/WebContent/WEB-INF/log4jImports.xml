@@ -1,0 +1,5 @@
+<project name="log4jImports">
+
+<import file="./log4jProperties.xml" />
+	
+</project>

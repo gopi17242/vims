@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+	   <tlibversion>1.0</tlibversion>
+
+	   <jspversion>1.1</jspversion>
+
+	   <shortname>VimsBreadCrumbs</shortname>
+
+	   <uri></uri>
+
+	   <info>A simple tab library for the examples</info>
+		<tag>
+				<name>breadcrumbs</name>
+				<tagclass>com.vertex.VIMS.test.common.VIMSBreadCrumbsTag</tagclass>
+				<bodycontent>JSP</bodycontent>
+				<info>Custom Tag for implementing the bread crumbs on various search pages.</info>
+				<attribute>
+					<name>pageNameArray</name>
+					<required>false</required>
+					<rtexprvalue>true</rtexprvalue>
+				</attribute>	
+				<attribute>
+					<name>currPageName</name>
+					<required>false</required>
+					<rtexprvalue>true</rtexprvalue>
+				</attribute>			
+		</tag>
+</taglib>

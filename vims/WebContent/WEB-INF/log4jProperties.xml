@@ -1,0 +1,7 @@
+<project name="log4jProperties">
+
+<!-- These are all directory representations -->
+<property name="drive" value="E:"/> 
+<property name="jboss.server.log.dir" value="${drive}\VIMS-WorkFolder\Engineering\Source_Code\VIMS\I_VIMSD\jboss\server\default\log\VIMSLogs\"/>
+
+</project>

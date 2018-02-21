@@ -1,0 +1,669 @@
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+<tiles-definitions>
+<!-- VIMS Base Page -->
+
+<definition name="VIMSBase" path="/Home/VIMSBase.jsp">
+<put name="title" type="string" value="Home" />
+<put name="header" value="/Layouts/Header.jsp"/>
+<!-- <put name="tabs" value="/Layouts/AdminTabs.jsp"/> -->
+<put name="tabs" value="/Layouts/CommonTabs.jsp"/>
+<put name="body" value="/Home/VIMSHome.jsp"/>
+<put name="footer" value="/Layouts/UserFooter.jsp"/>	
+</definition>
+
+  <definition name="VIMSHome1" extends="VIMSBase">
+    <put name="title"  type="string"  value="Change Password"/>
+    <put name="body"   value="/changeClientPassword/changePassword.jsp"/>
+  </definition>
+ <!--  Configuration Settings Home Page -->
+ 
+ <!-- Configuration Settings Home Page Added by santhosh.k on 02/11/2009 -->
+<definition name="configHome" extends="VIMSBase">
+    <put name="title"  type="string"  value="Configuration Settings"/>
+    <put name="body"   value="/Home/configHome.jsp"/>
+  </definition> 
+  
+    
+<!--  LDAP Server Configuration Page -->
+
+<definition name="ldapTile" extends="VIMSBase">
+    <put name="title"  type="string"  value="LDAP Server Configuration"/>
+    <put name="body"   value="/Home/ldapConfig.jsp"/>
+  </definition>
+  
+  <definition name="modifyLdapTile" extends="VIMSBase">
+    <put name="title"  type="string"  value="Modify LDAP Server Details "/>
+    <put name="body"   value="/Home/modifyLdapDetails.jsp"/>
+  </definition>
+  
+  <definition name="mailTile" extends="VIMSBase">
+    <put name="title"  type="string"  value="Mail Server Configuration"/>
+    <put name="body"   value="/Home/mailConfig.jsp"/>
+  </definition>
+  
+  <definition name="modifyMailTile" extends="VIMSBase">
+    <put name="title"  type="string"  value="Modify Mail Server Details"/>
+    <put name="body"   value="/Home/modifyMailDetails.jsp"/>
+  </definition>
+  
+  <definition name="homeTile" extends="VIMSBase">
+    <put name="title"  type="string"  value="Home Page Configuration"/>
+    <put name="body"   value="/config/homePageConfig.jsp"/>
+  </definition>
+  
+  <definition name="newApplicationListTile" extends="VIMSBase">
+	  <put name="title" type="string" value="New Applications Added" />
+	  <put name="body" value="/config/newApplicationList.jsp" />
+  </definition>
+  
+  <definition name="issuedisplayTile" extends="VIMSBase">
+	  <put name="title" type="string" value="Issues" />
+	  <put name="body" value="/config/viewIssues.jsp" />
+  </definition>
+  
+  <definition name="newCustomerDisplayTile" extends="VIMSBase">
+	  <put name="title" type="string" value="New Customers" />
+	  <put name="body" value="/config/newCustomersDisplay.jsp" />
+  </definition>
+  
+  <definition name="FieldConfigTile" extends="VIMSBase">
+	  <put name="title" type="string" value="Maintain Keywords" />
+	  <put name="body" value="/config/fieldConfiguration.jsp" /> 
+  </definition>
+
+  <definition name="LocationTile" extends="VIMSBase">
+	  <put name="title" type="string" value="Maintain Keywords" />
+	  <put name="body" value="/config/locationConfig.jsp" />
+  </definition>
+  
+  <definition name="PositionTile" extends="VIMSBase">
+	  <put name="title" type="string" value="Maintain Keywords" />
+	  <put name="body" value="/config/positionConfig.jsp" />
+  </definition>
+  
+  <definition name="StateTile" extends="VIMSBase">
+	  <put name="title" type="string" value="Maintain Keywords" />
+	  <put name="body" value="/config/stateConfig.jsp" />
+  </definition>
+  
+  <definition name="CountryTile" extends="VIMSBase">
+	  <put name="title" type="string" value="Maintain Keywords" />
+	  <put name="body" value="/config/countryConfig.jsp" />
+  </definition>
+  
+  <definition name="tabTile" extends="VIMSBase">
+	  <put name="title" type="string" value="Tab Customization" />
+	  <put name="body" value="/config/tabDemo.jsp" />
+  </definition>   
+  
+  <!-- End of LDAP Server Configuration Page  -->
+  
+   <!--VIMS AdministrationChangePassword Page -->
+  <definition name="AdministrationChangePassword" extends="VIMSBase">
+    <put name="title"  type="string"  value="AdministrationChangePassword"/>
+    <put name="body"   value="/VIMSAdminChangePassword.jsp"/>
+  </definition>
+  
+<!--VIMS Administration Home  Page -->
+  <definition name="VIMSHome" extends="VIMSBase">
+    <put name="title"  type="string"  value="Home"/>
+    <put name="body"   value="/Home/VIMSHome.jsp"/>
+  </definition>
+
+  <!--VIMS Administration  Page -->
+  <definition name="Admininistration" extends="VIMSBase">
+    <put name="title"  type="string"  value="VIMS Administration"/>
+    <put name="body"   value="/VIMSAdministration.jsp"/>
+  </definition>
+
+  <!--VIMS AdministrationChangePassword Page -->
+  <definition name="AdministrationChangePassword" extends="VIMSBase">
+    <put name="title"  type="string"  value="AdministrationChangePassword"/>
+    <put name="body"   value="/VIMSAdminChangePassword.jsp"/>
+  </definition>
+
+  <!--Applications  Page -->
+  <definition name="Applications" extends="VIMSBase">
+    <put name="title"  type="string"  value="Applications"/>
+    <put name="body"   value="../ApplicationsLinkTest/applicationList.jsp"/>
+  </definition>
+
+
+  <!-- Add Applications  Page  --> 
+ <definition name="AddApplication" extends="VIMSBase">
+  <put name="title" type="string" value="New Application" /> 
+  <put name="body" value="../ApplicationsLinkTest/addApplication.jsp" /> 
+  </definition>
+ <!-- Modify Applications  Page   --> 
+ <definition name="ModifyApplication" extends="VIMSBase">
+  <put name="title" type="string" value="Modify Application" /> 
+  <put name="body" value="../ApplicationsLinkTest/modifyApplication.jsp" /> 
+  </definition>
+ <!-- View Applications  Page 
+  --> 
+ <definition name="ViewApplication" extends="VIMSBase">
+  <put name="title" type="string" value="View Application Details" /> 
+  <put name="body" value="../ApplicationsLinkTest/viewApplication.jsp" /> 
+  </definition>
+ <!-- Applications  Specialists Page   --> 
+ <definition name="ApplicationSpecialist" extends="VIMSBase">
+  <put name="title" type="string" value="Application Specialist" /> 
+  <put name="body" value="../ApplicationsLinkTest/applicationSpecialist.jsp" /> 
+  </definition>
+ <!-- Applications  Specialists Act Page   --> 
+ <definition name="ViewApplicationSpecialist" extends="VIMSBase">
+  <put name="title" type="string" value="View Application Specialist" /> 
+  <put name="body" value="../ApplicationsLinkTest/viewApplicationSpecialist.jsp" /> 
+  </definition>
+ <!-- Applications  Modules Page 
+  --> 
+ <definition name="ApplicationModules" extends="VIMSBase">
+  <put name="title" type="string" value="Application Modules" /> 
+  <put name="body" value="../ApplicationsLinkTest/applicationModules.jsp" /> 
+  </definition>
+ <!-- Applications  ApplicationGroups Page   --> 
+ <definition name="ApplicationGroups" extends="VIMSBase">
+  <put name="title" type="string" value="Application Groups" /> 
+  <put name="body" value="../ApplicationsLinkTest/applicationGroups.jsp" /> 
+  </definition>
+ <!-- Applications  Application Customers Page  --> 
+ <definition name="AppCustomers" extends="VIMSBase">
+  <put name="title" type="string" value="Application Customers" /> 
+  <put name="body" value="../ApplicationsLinkTest/applicationCustomers.jsp" /> 
+  </definition>
+ <!-- Applications  Sub Categories  viewPage   --> 
+ <definition name="AppSubCatView" extends="VIMSBase">
+  <put name="title" type="string" value="Application Sub Categories View" /> 
+  <put name="body" value="../ApplicationsLinkTest/appSubCatView.jsp" /> 
+  </definition>
+ <!-- App Specialist View Page   --> 
+ <definition name="AppSpecialistView" extends="VIMSBase">
+  <put name="title" type="string" value="AppSpecialist View" /> 
+  <put name="body" value="../ApplicationsLinkTest/appSpecialistView.jsp" /> 
+  </definition>
+
+<!-- ViewApplicationSLADetails -->
+<definition name="ViewApplicationSLADetails" extends="VIMSBase">
+  <put name="title" type="string" value="View Application SLA Details" /> 
+  <put name="body" value="../ApplicationsLinkTest/viewApplicationSLADetails.jsp" /> 
+  </definition>
+
+  <!--Service Level Agreement  Page -->
+  <definition name="SLA" extends="VIMSBase">
+    <put name="title"  type="string"  value="Service Level Agreement"/>
+    <put name="body"   value="/SLA/SLASetting.jsp"/>
+  </definition>
+  
+  <definition name="SLASettingsModify" extends="VIMSBase">
+    <put name="title"  type="string"  value="Service Level Agreement"/>
+    <put name="body"   value="/SLA/SLASettingModify.jsp"/>
+  </definition>
+
+ 
+<!--Employees  Tab Related settings start here -->
+  
+  <!--Employees  Page -->
+  <definition name="Employees" extends="VIMSBase">
+    <put name="title"  type="string"  value="Employees"/>
+    <put name="body"   value="../EmployeeTest/NewEmployee.jsp"/>
+  </definition>
+
+  <!--Employees  (Edit Employee) Page -->
+  <definition name="EditEmployee" extends="VIMSBase">
+    <put name="title"  type="string"  value="Modify Employee"/>
+    <put name="body"   value="../EmployeeTest/editEmployee.jsp"/>
+  </definition>
+
+  <!--Employees  (Add Employee) Page -->
+  <definition name="AddEmployee" extends="VIMSBase">
+    <put name="title"  type="string"  value="New Employee"/>
+    <put name="body"   value="../EmployeeTest/addNewEmployee.jsp"/>
+  </definition>
+
+  <!--Employees  (View Employee) Page -->
+  <definition name="ViewEmployee" extends="VIMSBase">
+    <put name="title"  type="string"  value="View Employee Details"/>
+    <put name="body"   value="../EmployeeTest/viewEmployee.jsp"/>
+  </definition>
+  
+<!--Employees  Tab related settings end here -->
+
+
+   <!--Clients  Page -->
+ 
+  <definition name="Clients" extends="VIMSBase">
+    <put name="title" type="string"  value="Customers"/>
+    <put name="body" value="/clientTest/CustomerDetails.jsp"/>
+  </definition>
+
+  <!-- Test Customers  Page--> 
+  <definition name="TestCustomer" extends="VIMSBase">
+    <put name="title"  type="string"  value="New Customer"/>
+    <put name="body"   value="/clientTest/AddCustomer.jsp"/>
+  </definition>
+  
+  <!-- Add Customers  Page--> 
+  <definition name="SuccessAddCustomer" extends="VIMSBase">
+    <put name="title"  type="string"  value="AddCustomer"/>
+    <put name="body"   value="/clientTest/Success.jsp"/>
+  </definition>
+ 
+  <!-- Add Customers  Page--> 
+  <definition name="FailureAddCustomer" extends="VIMSBase">
+    <put name="title"  type="string"  value="TestCustomer"/>
+    <put name="body"   value="/clientTest/Failure.jsp"/>
+  </definition>
+ 
+ 
+ <!-- Display Client  Page -->
+  <definition name="DisplayClient" extends="VIMSBase">
+    <put name="title"  type="string"  value="Modify Customer"/>
+    <put name="body"   value="/clientTest/modifyCustomer.jsp"/>
+  </definition>
+  
+  <!-- View Client  Page -->
+  <definition name="viewClient" extends="VIMSBase">
+    <put name="title"  type="string"  value="View Customer Details"/>
+    <put name="body"   value="/clientTest/ViewCustomer.jsp"/>
+  </definition> 
+ 
+ 
+  <!--Purging tag related settings -->
+  <definition name="Purging" extends="VIMSBase">
+    <put name="title"  type="string"  value="Purging"/>
+    <put name="body"   value="../PurgingTest/purging.jsp"/>
+  </definition>
+ 
+ <!--Purging tag related settings ends here-->
+ 
+  <!--Support Centre  Page -->
+ 
+ 
+  <definition name="SupportCenter" extends="VIMSBase">
+    <put name="title"  type="string"  value="Support Center "/>
+    <put name="body"   value="/SupportCenter/SupportCenter.jsp"/>
+  </definition>  
+
+  <!--Groups  Page -->
+  <definition name="Groups" extends="VIMSBase">
+    <put name="title"  type="string"  value="New Support Group "/>
+    <put name="body"   value="/SupportCenter/Groups.jsp"/>
+  </definition>  
+
+  <!-- New Support Center  Page -->
+  <definition name="NewSupportCenter" extends="VIMSBase">
+    <put name="title"  type="string"  value="New Support Center "/>
+    <put name="body"   value="/SupportCenter/NewSupportCenter.jsp"/>
+  </definition>  
+
+  <!-- Group Details  Page -->
+  <definition name="GroupDetails" extends="VIMSBase">
+    <put name="title"  type="string"  value="Group Details "/>
+    <put name="body"   value="/SupportCenter/GroupDetails.jsp"/>
+  </definition>  
+  
+    <!-- View Groups Page -->
+    <definition name="ViewGroups" extends="VIMSBase">
+    <put name="title"  type="string"  value="Groups"/>
+    <put name="body"   value="/SupportCenter/ViewGroups.jsp"/>
+  </definition> 
+  
+<!--  New SupportCenter Success -->
+
+<definition name="NewSupportCenterSuccess" extends="VIMSBase">
+    <put name="title"  type="string"  value="Add Support Center Success"/>
+    <put name="body"   value="/SupportCenter/Success.jsp"/>
+  </definition>
+  
+  
+  <!--  New SupportCenter Failure -->
+
+<definition name="NewSupportCenterFailure" extends="VIMSBase">
+    <put name="title"  type="string"  value="Add Support Center Failure"/>
+    <put name="body"   value="/SupportCenter/Failure.jsp"/>
+  </definition>
+
+<!--  New Group Success -->
+
+<definition name="NewGroupSuccess" extends="VIMSBase">
+    <put name="title"  type="string"  value="New Group Success"/>
+    <put name="body"   value="/SupportCenter/GroupSuccess.jsp"/>
+  </definition>
+  
+  <!--  New Group Failure -->
+
+<definition name="NewGroupFailure" extends="VIMSBase">
+    <put name="title"  type="string"  value="Add Group Failure"/>
+    <put name="body"   value="/SupportCenter/GroupFailure.jsp"/>
+  </definition>
+  
+   <!--  Edit Group -->
+  <definition name="EditGroup" extends="VIMSBase">
+    <put name="title"  type="string"  value="Modify Support Group"/>
+    <put name="body"   value="/SupportCenter/GroupsEdit.jsp"/>
+  </definition>
+  
+  
+   <!--  Edit SupportCenter -->
+  <definition name="EditSupportCenterPage" extends="VIMSBase">
+    <put name="title"  type="string"  value="Modify Support Center"/>
+    <put name="body"   value="/SupportCenter/EditSupportCenter.jsp"/>
+  </definition>
+<!--  Added By Aditya on 13-11-2008 -->
+<!-- New Issues Page -->
+  <definition name="NewIssues" extends="VIMSBase">
+    <put name="title"  type="string"  value="New Issue"/>
+    <put name="body"   value="/NewIssue/IntNewIncident.jsp"/>
+  </definition>
+  
+  <!-- New Issue Success -->
+  <definition name="NewIssueSuccess" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issue Confirmation"/>
+    <put name="body"   value="/NewIssue/Success.jsp"/>
+  </definition>
+  
+  <!--  New Issue Failure -->
+  <definition name="NewIssueFailure" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issue Confirmation"/>
+    <put name="body"   value="/NewIssue/Failure.jsp"/>
+  </definition>
+  <!--  Aditya End -->
+  
+<!-- List of Issues Page -->
+  <definition name="ListofIssues" extends="VIMSBase">
+    <put name="title"  type="string"  value="List of Issues"/>
+    <put name="body"   value="/List of Issues/listofincidents.jsp"/>
+  </definition>
+  
+   <definition name="DisplayOpenIssuesInAppl" extends="VIMSBase">
+    <put name="title"  type="string"  value="Open Issues in an Application"/>
+    <put name="body"   value="/List of Issues/displayOpenIssuesInAppl.jsp"/>
+  </definition>
+  
+  <definition name="IssueAssignment" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issue Information"/>
+    <put name="body"   value="/List of Issues/IncidentAssignment.jsp"/>
+  </definition>
+  
+   <definition name="IssueAssignmentSuccess" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issue Confirmation"/>
+    <put name="body"   value="/List of Issues/IncidentAssignmentSuccess.jsp"/>
+  </definition>
+  
+   <definition name="IssueAssignmentFailure" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issue Confirmation"/>
+    <put name="body"   value="/List of Issues/IncidentAssignmentFailure.jsp"/>
+  </definition>
+  <!--  Added by Geeta -->
+   <definition name="ListOfIssuesUser" extends="VIMSBase">
+    <put name="title"  type="string"  value="My Issues"/>
+    <put name="body"   value="/List of Issues/userListOfIssues.jsp"/>
+  </definition>
+  
+   <definition name="ListOfIssuesUser" extends="VIMSBase">
+    <put name="title"  type="string"  value="Open Issues"/>
+    <put name="body"   value="/List of Issues/userListOfIssues.jsp"/>
+  </definition>
+  
+  <definition name="WorkLocationHome" extends="VIMSBase">
+    <put name="title"  type="string"  value="Maintain Keywords"/>
+    <put name="body"   value="/config/locationConfig.jsp"/>
+  </definition>
+  
+  <definition name="StatePage" extends="VIMSBase">
+    <put name="title"  type="string"  value="Maintain Keywords"/>
+    <put name="body"   value="/config/stateConfig.jsp"/>
+  </definition>
+  
+<!-- ======Customer Isssues Page========== -->
+  <definition name="CustomerIssues" extends="VIMSBase">
+    <put name="title"  type="string"  value="My Issues"/>
+    <put name="body"   value="../CustomerLogin/custListOfIssues.jsp"/>
+  </definition>
+  
+		
+	
+<!-- ======End of Customer Issues Page===== -->
+
+  <!-- Employee Issues Page -->
+  <definition name="EmployeeIssues" extends="VIMSBase">
+    <put name="title"  type="string"  value="My Issues"/>
+    <put name="body"   value="/employeeIssues.jsp"/>
+  </definition>
+
+   <definition name="EmployeeMyIssues" extends="VIMSBase">
+    <put name="title"  type="string"  value="My Issues"/>
+    <put name="body"   value="/employeeMyIssues.jsp"/>
+  </definition>
+
+   <definition name="EmployeeOtherIssues" extends="VIMSBase">
+    <put name="title"  type="string"  value="My Issues"/>
+    <put name="body"   value="/employeeOtherIssues.jsp"/>
+  </definition>
+
+  <!--Incident Assignment Page -->
+  <definition name="IncidentAssignment" extends="VIMSBase">
+    <put name="title"  type="string"  value="Incident Assignment"/>
+    <put name="body"   value="/IncidentAssignment.jsp"/>
+  </definition>
+
+  <!--Escalation Page -->
+  <definition name="Escalation" extends="VIMSBase">
+    <put name="title"  type="string"  value="Escalation"/>
+    <put name="body"   value="/Escalation/EscalatedIssues.jsp"/>
+  </definition>
+
+  <!--Incident ReAssignment Page -->
+  <definition name="IncidentReAssignment" extends="VIMSBase">
+    <put name="title"  type="string"  value="Incident ReAssignment"/>
+    <put name="body"   value="/IncidentReAssignment.jsp"/>
+  </definition>
+
+  <!-- ======== Starting My To Do List Page -By Sudhir ===========-->
+  <definition name="MyToDoList" extends="VIMSBase">
+    <put name="title"  type="string"  value="My To Do List"/>
+    <put name="body"   value="../MyToDoListTest/EmployeeMyToDoList.jsp"/>
+  </definition>
+
+  <definition name="MyToDoListByDate" extends="VIMSBase">
+    <put name="title"  type="string"  value="MyToDoList by Date"/>
+    <put name="body"   value="/EMPMyToDoListByDate.jsp"/>
+  </definition>
+
+  <definition name="MyToDoListByAppli" extends="VIMSBase">
+    <put name="title"  type="string"  value="MyToDoList By Application"/>
+    <put name="body"   value="/EMPMyToDoListByAppli.jsp"/>
+  </definition>
+
+   <!--===========Management Reports Page (Modified)================ -->
+   <definition name="ApplicationReports" extends="VIMSBase">
+	  <put name="title" type="string" value="Application Report" /> 
+	  <put name="body" value="/reports-Test/applicationReports.jsp" /> 
+  	</definition>
+  	
+  	 <definition name="DisplayApplicationReports" extends="VIMSBase">
+	  <put name="title" type="string" value="Applications Report" /> 
+	  <put name="body" value="/reports-Test/displayApplicationReports.jsp" /> 
+  	</definition>
+  	
+  	 <definition name="SLAReports" extends="VIMSBase">
+	  <put name="title" type="string" value="SLA Report" /> 
+	  <put name="body" value="/reports-Test/slaReports.jsp" /> 
+  	</definition>
+  	
+  	<definition name="DisplaySLAReports" extends="VIMSBase">
+	  <put name="title" type="string" value="SLA Report" /> 
+	  <put name="body" value="/reports-Test/displaySLAReports.jsp" /> 
+  	</definition>
+  	
+	<definition name="ReportsHome" extends="VIMSBase">
+	  <put name="title" type="string" value="Reports" /> 
+	  <put name="body" value="/reports-Test/reportsHome.jsp" /> 
+  	</definition>
+  	<definition name="EmployeeReports" extends="VIMSBase">
+	  <put name="title" type="string" value="Employee Report" /> 
+	  <put name="body" value="/reports-Test/employeeReports.jsp" /> 
+  	</definition> 
+  	
+  	<definition name="AssignedEmployeeReports" extends="VIMSBase">
+	  <put name="title" type="string" value="Employee Report" /> 
+	  <put name="body" value="/reports-Test/AssignedEmployeeReports.jsp" /> 
+  	</definition> 
+  	
+  	<definition name="GenerateEmployeeReports" extends="VIMSBase">
+	  <put name="title" type="string" value="Employee Report" /> 
+	  <put name="body" value="/reports-Test/viewEmployeeReports.jsp" /> 
+  	</definition>
+  	<definition name="GenerateCustomerReports" extends="VIMSBase">
+	  <put name="title" type="string" value="Customer Report" /> 
+	  <put name="body" value="/reports-Test/viewCustomerReports.jsp" /> 
+  	</definition> 
+  	
+  	<definition name="CustomerReports" extends="VIMSBase">
+	  <put name="title" type="string" value="Customer Report" /> 
+	  <put name="body" value="/reports-Test/customerReports.jsp" /> 
+  	</definition>  	
+  	
+  <!--Management Reports Page -->
+  <definition name="ManagementReports" extends="VIMSBase">
+    <put name="title"  type="string"  value="Reports"/>
+    <put name="body"   value="/reports/reports.jsp"/>
+  </definition>
+  
+  <!-- Reports Display Page -->
+  <definition name="ReportsDisplay" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issues in Application Pool"/>
+    <put name="body"   value="/reports/reportsDisplay.jsp"/>
+  </definition>
+
+  <!--NoOfIssuesEachApp.html Page -->
+  <definition name="NoOfIssuesEachApp" extends="VIMSBase">
+    <put name="title"  type="string"  value="NoOfIssuesEachApp"/>
+    <put name="body"   value="/NoOfIssuesEachApp.jsp"/>
+  </definition>
+
+  <!--Specificstatbar.html Page -->
+  <definition name="Specificstatbar" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issues in Specific Status"/>
+    <put name="body"   value="/reports/Specificstatbar.jsp"/>
+  </definition>
+  
+  <!--Specificstatbar.html Page -->
+  <definition name="AllIssuesReports" extends="VIMSBase">
+    <put name="title"  type="string"  value="Issues in Specific Status"/>
+    <put name="body"   value="/reports/allIssuesReports.jsp"/>
+  </definition>
+
+  <!--NoOfIssuesPerDateBar.html Page -->
+  <definition name="NoOfIssuesPerDateBar" extends="VIMSBase">
+    <put name="title"  type="string"  value="NoOfIssuesPerDateBar"/>
+    <put name="body"   value="/NoOfIssuesPerDateBar.jsp"/>
+  </definition>
+
+  <!--SLAStatusBar.html Page -->
+  <definition name="SLAStatusBar" extends="VIMSBase">
+    <put name="title"  type="string"  value="SLA Information"/>
+    <put name="body"   value="/reports/SLAInformation.jsp"/>
+  </definition>
+  <!-- Added by santhosh.k on 01/12/2009 -->
+<!--Custom Reports Page -->
+  <definition name="CustomReports" extends="VIMSBase">
+    <put name="title"  type="string"  value="Custom Reports"/>
+    <put name="body"   value="/reports/CustomReports.jsp"/>
+  </definition>
+
+
+ <!-- Search Page -->
+   <definition name="Search" extends="VIMSBase">
+    <put name="title"  type="string"  value="Search "/>
+    <put name="body"   value="/searchTest/Search.jsp"/>
+  </definition>
+   
+ 
+<!-- Help Page -->
+   <definition name="Help" extends="VIMSBase">
+    <put name="title"  type="string"  value="Help "/>
+    <put name="body"   value="/help/help.jsp"/>
+  </definition>  
+
+   <!-- Incident Information Page -->
+   <definition name="IncidentInformation" extends="VIMSBase">
+    <put name="title"  type="string"  value="Incident Information "/>
+    <put name="body"   value="/IncidentInformation.jsp"/>
+  </definition>  
+
+ 
+  <!-- FAQ  Page -->
+   <definition name="FAQ" extends="VIMSBase">
+    <put name="title"  type="string"  value="Frequently Asked Questions"/>
+    <put name="body"   value="/FAQTest/FAQTest.jsp"/>
+  </definition>  
+
+  <!-- About Us  Page -->
+   
+   <definition name="AboutUs" extends="VIMSBase">
+    <put name="title"  type="string"  value="About Us"/>
+    <put name="body"   value="/AboutUsTest/AboutUs.jsp"/>
+  </definition>  
+
+  <definition name="privacyPolicy" extends="VIMSBase">
+    <put name="title"  type="string"  value="Privacy Policy "/>
+    <put name="body"   value="/privacyPolicyTest/privacyPolicy.jsp"/>
+  </definition>  
+  
+  <definition name="termsconditions" extends="VIMSBase">
+    <put name="title"  type="string"  value="Terms and Conditions"/>
+    <put name="body"   value="/TermsConditionsTest/termsConditionsTest.jsp"/>
+  </definition>  
+  
+  <!-- Office Locations Page -->
+   <definition name="OfficeLocation" extends="VIMSBase">
+    <put name="title"  type="string"  value="Office Locations "/>
+    <put name="body"   value="/OfficeLocationTest/OfficeLocation.jsp"/>
+  </definition>
+  
+
+   <!-- Page Under Construction   -->
+   <definition name="ConstructionPage" extends="VIMSBase">
+    <put name="title"  type="string"  value="ConstructionPage "/>
+    <put name="body"   value="/construction.jsp"/>
+  </definition>
+  
+  <!-- Issue Report Tile -->
+  
+  <definition name="IssueReportBase" extends="VIMSBase" >
+  <put name="title" type="string" value="Issue Report" />
+  <put name="body" value="/reports-Test/issueReport.jsp" />
+  </definition>
+  
+  <definition name="IssueReportListTile" extends="VIMSBase" >
+  <put name="title" type="string" value="Issue Report" />
+  <put name="body" value="/reports-Test/displayReport.jsp" />
+  </definition>
+  
+  <definition name="displayDetailViewTile" extends="VIMSBase" >
+	  <put name="title" type="string" value="Issue Detail View" />
+	  <put name="body" value="/reports-Test/issueDetailView.jsp" />
+  </definition>
+
+  <definition name="RoleTile" extends="VIMSBase">
+	<put name="title" type="string" value="Maintain Keywords" />
+	<put name="body" value="/config/roleConfig.jsp" /> 
+ </definition>
+ 
+ <definition name="TabHomeTile" extends="VIMSBase">
+   <put name="title" type="string" value="Access Privileges" />
+   <put name="body" value="/config/tabHome.jsp" />
+ </definition>
+ 
+ <definition name="FooterTile" extends="VIMSBase" >
+ 	<put name="title" type="string" value="Footer Customization" />
+ 	<put name="body" value="/config/footerHome.jsp" />	
+ </definition>   
+<definition name="LoginError" path="/test-errorPages/VIMSerrorpage.jsp"/>
+
+
+</tiles-definitions>
+
+
